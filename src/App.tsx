@@ -1,10 +1,12 @@
-import React from 'react';
+
+import AppRoutes from "routes";
+
 
 function App() {
   return (
-    <h1 className='text-3xl font-bold underline'>
-     Syatem project
-    </h1>
+ <div>
+  <AppRoutes/>
+ </div>
   );
 }
 
