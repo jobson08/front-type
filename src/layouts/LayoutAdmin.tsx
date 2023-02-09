@@ -5,15 +5,14 @@ import { Outlet } from "react-router-dom"
 function LayoutAdmin() {
   return (
 
-    <div className="min-h-screen grid grid-cols-6">
+    <div className="min-h-screen grid grid-col-1 xl:grid-cols-6 ">
       <Sidebar />
-      <div className="xl:col-span-5 bg-slate-800">
+      <div className="xl:col-span-5">
         <Navbar />
-        <div className="h-[90] ">
+        <div className="h-[90vh] overflow-y-scroll py-5">
           <Outlet />
         </div>
       </div>
-
     </div>
   )
 }
