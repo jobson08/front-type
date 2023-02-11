@@ -71,7 +71,7 @@ function Sidebar() {
       </div>
       <nav>
       <Link to="/dashboard" className='flex items-center gap-2 py-2 px-4 rounded-lg text-slate-200 hover:bg-main-bg transition-colors'>
-            <RiLogoutCircleRLine className='text-secondary ' />Sair
+            <RiLogoutCircleRLine className='text-secondary w-6 h-6' />Sair
           </Link>
       </nav>
     </div>
