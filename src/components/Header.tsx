@@ -111,7 +111,7 @@ function Header() {
         >
         <MenuItem className="p-0 hover:bg-transparent">
             <Link
-              to="/perfil"
+              to="/profile"
               className="rounded-lg transition-colors text-black hover:bg-secondary-900 flex items-center gap-x-4 py-2 px-6 flex-1"
             >
               <img src={avatar} alt="user" className='w-8 h-8 object-cover rounded-full' />
@@ -125,7 +125,7 @@ function Header() {
           <hr className="my-4 border-gray-700" />
           <MenuItem className="p-0 hover:bg-transparent">
             <Link
-              to="/configuracion"
+              to="/settings"
               className="rounded-lg transition-colors text-black hover:bg-gray2-bg flex items-center gap-x-4 py-2 px-6 flex-1"
             >
               <RiSettings3Line /> Comfiguração
@@ -134,7 +134,7 @@ function Header() {
 
           <MenuItem className="p-0 hover:bg-transparent">
             <Link
-              to="/cerrar-sesion"
+              to="/"
               className="rounded-lg transition-colors text-black hover:bg-gray2-bg flex items-center gap-x-4 py-2 px-6 flex-1"
             >
               <RiLogoutCircleRLine /> Encerrar seção

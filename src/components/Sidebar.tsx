@@ -50,7 +50,7 @@ function Sidebar() {
             </button>
             <ul className={`my-2 ${!showSubmenu && "hidden"}`}>
               <li> 
-                  <Link to="/home" className='py-2 px-4 border-l text-gray-100 rounded-lg border-green-300 ml-6 block relative before:w-3 
+                  <Link to="/profile" className='py-2 px-4 border-l text-gray-100 rounded-lg border-green-300 ml-6 block relative before:w-3 
                   before:h-3 before:absolute before:bg-gree1-bg before:rounded-full before:-left-[6.5px] 
                   before:top-1/2 before:-translate-y-1/2 before:border-4 before:border-secondary hover:bg-main-bg
                   transition-colors'>
@@ -58,7 +58,7 @@ function Sidebar() {
                   </Link>
               </li>
               <li> 
-                  <Link to="/dashboard" className='py-2 px-4 border-l text-gray-100 rounded-lg border-green-300 ml-6 block relative before:w-3 
+                  <Link to="/settings" className='py-2 px-4 border-l text-gray-100 rounded-lg border-green-300 ml-6 block relative before:w-3 
                   before:h-3 before:absolute before:bg-gree1-bg before:rounded-full before:-left-[6.5px] 
                   before:top-1/2 before:-translate-y-1/2 before:border-4 before:border-secondary hover:bg-main-bg
                   transition-colors'>
@@ -70,7 +70,7 @@ function Sidebar() {
         </ul>
       </div>
       <nav>
-      <Link to="/dashboard" className='flex items-center gap-2 py-2 px-4 rounded-lg text-slate-200 hover:bg-main-bg transition-colors'>
+      <Link to="/" className='flex items-center gap-2 py-2 px-4 rounded-lg text-slate-200 hover:bg-main-bg transition-colors'>
             <RiLogoutCircleRLine className='text-secondary w-6 h-6' />Sair
           </Link>
       </nav>
