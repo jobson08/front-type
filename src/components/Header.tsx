@@ -87,7 +87,7 @@ function Header() {
           <MenuItem className="p-0 hover:bg-transparent flex justify-center cursor-default">
             <Link
               to="/"
-              className="text-gray-600 text-[18px] hover:text-gray-900 transition-colors"
+              className="text-gray-600 text-[18px] hover:text-secondary transition-colors"
             >
               Todas as Notificaçoes
             </Link>
