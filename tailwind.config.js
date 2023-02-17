@@ -10,26 +10,23 @@ module.exports = {
       },
 
       colors:{
-        'primary': '#006Aff',
+        'primary': '#0095e8',
         'secondary': '#52c93f',
       },
 
       backgroundColor: {
         'main-bg': '#006Aff',
-        'secondary-bg': '#52c93f',
-        'sidebar-bg': '#525256',
-        'card1-bg': '(255,255,255)',
-        'body-bg': 'rgba(239, 240, 244)',
-        'body2-bg': 'rgba(245, 248, 250)',
-        'gree1-bg': 'rgba(138, 228, 84)',
-        'gree2-bg': 'rgba(98, 209, 30 )',
-        'gree3-bg': 'rgba(73, 175, 10 )',
+        'secondary-dark-bg': 'rgba(12, 42, 77)',
+        'sidebar-bg': '#1E1E2D',
+        'secondary2-bg': '#ffffff',
+        'body-bg': '#f5f8fa',
+        'gree1-bg': '#8ae454',
         'gray1-bg': '#F8F7F1',
         'gray2-bg': '#A3A3A3',
         'gray3-bg': '#656575',
         'gray4-bg': '#525256',
         'light-gray-br': '#F7F7F7',
-        'secondary-dark-bg': 'rgba(12, 42, 77)',
+        
         'half-transparent': 'rgba(0, 0, 0, 0.5)',
       },
       

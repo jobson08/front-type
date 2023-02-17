@@ -75,7 +75,7 @@ function Sidebar() {
           </Link>
       </nav>
     </div>
-    <button onClick={() => setShowMenu(!showMenu)} className='xl:hidden fixed bottom-4 right-4 bg-secondary-bg text-white p-3 rounded-full z-50'>
+    <button onClick={() => setShowMenu(!showMenu)} className='xl:hidden fixed bottom-4 right-4 bg-main-bg text-white p-3 rounded-full z-50'>
      {showMenu ? <RiCloseLine /> : <RiMenuLine /> } 
     </button>
     </>
