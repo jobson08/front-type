@@ -9,7 +9,7 @@ function LayoutAdmin() {
       <Sidebar />
       <div className="xl:col-span-5">
         <Header />
-        <div className="h-[90vh] overflow-y-scroll py-5 p-5 bg-body-bg">
+        <div className="h-[90vh] overflow-y-scroll  p-4 bg-body-bg">
           <Outlet  />
         </div>
       </div>
