@@ -1,7 +1,8 @@
 import LayoutAdmin from 'layouts/LayoutAdmin';
-import { ForgetPasswordPage, HomePage, RegisterPage } from 'pages/';
+import { ExpenseReportPage, ForgetPasswordPage, RegisterPage } from 'pages/';
 import LoginPage from 'pages/auth/LoginPage';
 import DashboardPage from 'pages/DashboardPage';
+import EntryReportPage from 'pages/reports/EntryReportPage';
 import Error from 'pages/Error';
 import ProfilePage from 'pages/ProfilePage';
 import SettingsPage from 'pages/SettingsPage';
@@ -17,8 +18,9 @@ function AppRoutes() {
                         <Route path="/forget" element={(<ForgetPasswordPage />)} />
                         {/*Pages admin */}
                         <Route path="/" element={<LayoutAdmin />} >
-                              <Route path="home" element={<HomePage />} />
                               <Route path="dashboard" element={<DashboardPage />} />
+                              <Route path="relaEntrada" element={<EntryReportPage />} />
+                              <Route path="relaDespesa" element={<ExpenseReportPage />} />
                               <Route path="settings" element={<SettingsPage />} />
                               <Route path="profile" element={<ProfilePage/>} />
                         </Route>

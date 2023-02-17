@@ -1,10 +1,11 @@
 import React,{useState} from 'react'
 import { Link } from 'react-router-dom'
-import { BsChevronRight, BsFillArrowDownCircleFill, BsFillArrowUpCircleFill, BsFillGridFill, BsFillHouseFill, BsPieChartFill, BsTools } from "react-icons/bs"
+import { BsChevronRight, BsFillArrowDownCircleFill, BsFillArrowUpCircleFill, BsFillGridFill, BsGraphUp, BsPieChartFill, BsTools } from "react-icons/bs"
 import { RiCloseLine, RiLogoutCircleRLine, RiMenuLine,} from "react-icons/ri";
 
 function Sidebar() {
   const [showMenu, setShowMenu] = useState(false)
+  const [ShowSubmenuRelatorio, setShowSubmenuRelatorio] = useState(false)
   const [showSubmenu, setShowSubmenu] = useState(false)
   return (
     <>
@@ -15,11 +16,6 @@ function Sidebar() {
           ADMIN<span className='text-secondary text-4xl'>@</span>
         </h1>
         <ul>
-          <li>
-            <Link to="/home" className='flex items-center gap-2 py-2 px-4 rounded-lg text-slate-200 hover:bg-main-bg transition-colors'>
-              <BsFillHouseFill className='text-secondary' />Home
-            </Link>
-          </li>
          <li> 
             <Link to="/dashboard" className='flex items-center gap-2 py-2 px-4 rounded-lg text-slate-200 hover:bg-main-bg transition-colors'>
               <BsPieChartFill className='text-secondary' />Dashboard
@@ -40,6 +36,35 @@ function Sidebar() {
               <BsFillGridFill className='text-secondary' />Categorias
             </Link>
          </li>
+
+         <li>
+            <button onClick={() => setShowSubmenuRelatorio(!ShowSubmenuRelatorio)} className='flex items-center justify-between py-2 px-4 rounded-lg 
+            text-slate-200 hover:bg-main-bg transition-colors'>
+              <span className=' flex items-center gap-2'>
+                <BsGraphUp className='text-secondary' />Relatorio
+              </span>
+              <BsChevronRight className={`${ShowSubmenuRelatorio && "rotate-90"} transition-all `} />
+            </button>
+            <ul className={`my-2 ${!ShowSubmenuRelatorio && "hidden"}`}>
+              <li> 
+                  <Link to="/relaEntrada" className='py-2 px-4 border-l text-gray-100 rounded-lg border-green-300 ml-6 block relative before:w-3 
+                  before:h-3 before:absolute before:bg-gree1-bg before:rounded-full before:-left-[6.5px] 
+                  before:top-1/2 before:-translate-y-1/2 before:border-4 before:border-secondary hover:bg-main-bg
+                  transition-colors'>
+                   Relatorio entrada
+                  </Link>
+              </li>
+              <li> 
+                  <Link to="/relaDespesa" className='py-2 px-4 border-l text-gray-100 rounded-lg border-green-300 ml-6 block relative before:w-3 
+                  before:h-3 before:absolute before:bg-gree1-bg before:rounded-full before:-left-[6.5px] 
+                  before:top-1/2 before:-translate-y-1/2 before:border-4 before:border-secondary hover:bg-main-bg
+                  transition-colors'>
+                    Relatorio Saida
+                  </Link>
+              </li>
+            </ul>
+           </li>
+
          <li>
             <button onClick={() => setShowSubmenu(!showSubmenu)} className='flex items-center justify-between py-2 px-4 rounded-lg 
             text-slate-200 hover:bg-main-bg transition-colors'>
@@ -67,6 +92,7 @@ function Sidebar() {
               </li>
             </ul>
            </li>
+
         </ul>
       </div>
       <nav>
