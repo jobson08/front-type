@@ -87,7 +87,7 @@ const CardInfor = ({ticket, totalTickets, text}: Props) => {
           to="/"
           className="flex items-center gap-2 text-text-gray-800 hover:underline"
         >
-          <RiAddLine /> Inseri nova transação
+          <RiAddLine /> Inseri nova Trasação
         </Link>
       </div>
     </div>
