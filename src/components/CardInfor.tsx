@@ -18,22 +18,22 @@ const CardInfor = ({ticket, totalTickets, text}: Props) => {
   let textColor = "";
 
   switch (ticket) {
-    case "pending":
-      status = "bg-yellow-500/10 text-yellow-500";
-      textColor = "text-yellow-500";
-      break;
-    case "inProcess":
+    case "receita":
       status = "bg-blue-500/10 text-blue-500";
       textColor = "text-blue-500";
       break;
-    case "close":
+    case "despesa":
+      status = "bg-red-500/10 text-red-500";
+      textColor = "text-red-500";
+      break;
+    case "balanco":
       status = "bg-green-500/10 text-green-500";
       textColor = "text-green-500";
       break;
-    case "total":
+    /*case "total":
       status = "bg-pink-500/10 text-pink-500";
       textColor = "text-pink-500";
-      break;
+      break;*/
   }
 
   return (
