@@ -4,26 +4,26 @@ import { formatCurrentMonth } from 'helpers/dateFilter';
 
 type Props ={
     currentMonth: string
-    onmonthChange: (newMonth: string) => void;
+    onMonthChange: (newMonth: string) => void;
     income: number;
     expense: number;
 }
 
-const InfoArea = ({currentMonth, onmonthChange, income, expense}: Props) => {
+const InfoArea = ({currentMonth, onMonthChange, income, expense}: Props) => {
 
     const handlePrevMonth = () =>{
-       let [yaer, month] = currentMonth.split('-');
-       let currentDate = new Date(parseInt(yaer), parseInt(month) - 1, 1);
-       currentDate.setMonth(currentDate.getMonth() -1); 
-       onmonthChange(`${currentDate.getFullYear()}-${currentDate.getMonth() + 1}`);
+      let [year, month] = currentMonth.split('-');
+      let currentDate = new Date(parseInt(year), parseInt(month) - 1, 1);
+      currentDate.setMonth( currentDate.getMonth() - 1 );
+      onMonthChange(`${currentDate.getFullYear()}-${currentDate.getMonth() + 1}`);
     }
 
 
     const handleNextMonth = () =>{
-        let [yaer, month] = currentMonth.split('-');
-       let currentDate = new Date(parseInt(yaer), parseInt(month) -1, 1);
-       currentDate.setMonth(currentDate.getMonth() + 1); 
-       onmonthChange(`${currentDate.getFullYear()}-${currentDate.getMonth() + 1}`);
+      let [year, month] = currentMonth.split('-');
+      let currentDate = new Date(parseInt(year), parseInt(month) - 1, 1);
+      currentDate.setMonth( currentDate.getMonth() + 1 );
+      onMonthChange(`${currentDate.getFullYear()}-${currentDate.getMonth() + 1}`);
     }
   return (
     <div>

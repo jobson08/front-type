@@ -7,11 +7,11 @@ import "@szhsin/react-menu/dist/transitions/slide.css";
 
 type Props ={
   ticket: string;
-  totalTickets: string;
+  value: number;
   text: string;
 }
 
-const CardInfor = ({ticket, totalTickets, text}: Props) => {
+const CardInfor = ({ticket, value, text}: Props) => {
  
 
   let status = "";
@@ -37,9 +37,9 @@ const CardInfor = ({ticket, totalTickets, text}: Props) => {
   }
 
   return (
-    <div className="bg-secondary2-bg p-8 rounded-xl">
-      <div className="flex items-center justify-between mb-4">
-        <div>
+    <div className="bg-secondary2-bg p-4 rounded-xl">
+     <div className="flex items-center justify-between mb-3">
+   {/*       <div>
           <RiTicketLine
             className={`text-4xl ${status} p-2 box-content rounded-xl`}
           />
@@ -74,11 +74,11 @@ const CardInfor = ({ticket, totalTickets, text}: Props) => {
               </Link>
             </MenuItem>
           </Menu>
-        </div>
+        </div>*/}
       </div>
       {/* Number of tickets */}
       <div>
-        <h1 className="text-4xl text-text-gray-800 font-bold mb-4">{totalTickets}</h1>
+        <h1 className="text-4xl text-text-gray-800 font-bold mb-4">{value}</h1>
         <p className={textColor}>{text}</p>
       </div>
       <hr className="border border-dashed border-gray-500/50 my-4" />
@@ -87,7 +87,7 @@ const CardInfor = ({ticket, totalTickets, text}: Props) => {
           to="/"
           className="flex items-center gap-2 text-text-gray-800 hover:underline"
         >
-          <RiAddLine /> Inseri nova Trasação
+          <RiAddLine /> Detalhes
         </Link>
       </div>
     </div>
