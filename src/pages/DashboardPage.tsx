@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState, useEffect } from "react";
 import CardTicket from "../components/CardInfor";
 import "@szhsin/react-menu/dist/index.css";
@@ -5,7 +6,7 @@ import "@szhsin/react-menu/dist/transitions/slide.css";
 
 import { Item } from "types/Item";
 import { items } from "data/items";
-import { filterListByMonth, getCurrentMonth } from "helpers/dateFilter";
+import { filterListByMonth, getCurrentMonth} from "helpers/dateFilter";
 import ItemsListe from "components/ItemsListe";
 import InfoArea from "components/InfoArea";
 import { categories } from "data/categories";
@@ -38,14 +39,14 @@ const DashboardPage = () => {
       }
     }
 
-    setIncome(incomeCount);
+    setIncome (incomeCount);
     setExpense(expenseCount);
   }, [filteredList]);
   
   return (
     <div>
       {/*TEMPORIZADOR */}
-      <div className='bg-secondary2-bg p-2 rounded-xl mt-1'>
+      <div className='bg-secondary2-bg p-2 rounded-xl mt-1 shadow-xl'>
         <InfoArea
          currentMonth={currentMonth} 
          onMonthChange={handleMonthChange}
@@ -58,7 +59,7 @@ const DashboardPage = () => {
         
         <CardTicket
           ticket="receita"
-          value={income}
+          value= {income}
           text="Total Receitas"
         />
         <CardTicket
@@ -79,7 +80,7 @@ const DashboardPage = () => {
       </div>
 
         {/* Lista tranzaçôes recentes*/}
-      <div className="bg-secondary2-bg p-2 rounded-xl mt-5">
+      <div className="bg-secondary2-bg p-2 rounded-xl mt-5 shadow-xl">
         <div>
           <h1 className="text-2xl text-blue tex-bold my-2">Transação más recientes</h1>
         </div>

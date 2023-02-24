@@ -27,7 +27,7 @@ const InfoArea = ({currentMonth, onMonthChange, income, expense}: Props) => {
     }
   return (
     <div>
-         <div className='flex flex-wrap xl:flex-nowrap m-3 justify-center '>
+         <div className='flex flex-wrap xl:flex-nowrap m-3 justify-center  '>
           <button
             type="button"
             onClick={handlePrevMonth}

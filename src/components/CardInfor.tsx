@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
 import { Link } from "react-router-dom";
-import { RiTicketLine, RiMore2Fill, RiAddLine } from "react-icons/ri";
-import { Menu, MenuItem, MenuButton } from "@szhsin/react-menu";
+import { RiAddLine } from "react-icons/ri";
+import{convertAmericanFromBrazil} from'../helpers/dateFilter'
 import "@szhsin/react-menu/dist/index.css";
 import "@szhsin/react-menu/dist/transitions/slide.css";
 
@@ -9,10 +10,10 @@ type Props ={
   ticket: string;
   value: number;
   text: string;
+  colors?:string;
 }
 
-const CardInfor = ({ticket, value, text}: Props) => {
- 
+const CardInfor = ({ticket, value, text, colors}: Props) => {
 
   let status = "";
   let textColor = "";
@@ -37,7 +38,7 @@ const CardInfor = ({ticket, value, text}: Props) => {
   }
 
   return (
-    <div className="bg-secondary2-bg p-4 rounded-xl">
+    <div className="bg-secondary2-bg p-4 shadow-xl rounded-xl">
      <div className="flex items-center justify-between mb-3">
    {/*       <div>
           <RiTicketLine
@@ -78,7 +79,7 @@ const CardInfor = ({ticket, value, text}: Props) => {
       </div>
       {/* Number of tickets */}
       <div>
-        <h1 className="text-4xl text-text-gray-800 font-bold mb-4">{value}</h1>
+        <h1 className= "text-4xl text-text-gray-800 font-bold mb-4 ">R$: {convertAmericanFromBrazil(value)}</h1>
         <p className={textColor}>{text}</p>
       </div>
       <hr className="border border-dashed border-gray-500/50 my-4" />

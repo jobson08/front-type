@@ -17,6 +17,8 @@ export const items: Item[] =[
     {id: 11, date: new Date(2023, 2, 10), category: "fabricaBolo", title:"Chocolate", value: 35.00 },
     {id: 12, date: new Date(2023, 2, 10), category: "fabricaBolo", title:"Cenoura", value: 15.00 },
     {id: 13, date: new Date(2023, 2, 9), category: "despesa", title:"Cartão Joselma", value: 300.00 },
+    {id: 133, date: new Date(2023, 2, 20), category: "despesa", title:"Cartão Nane", value: 300.00 },
+
 
     {id: 14, date: new Date(2023, 3, 9), category: "despesa", title:"Cartão Joselma", value: 300.00 },
     {id: 15, date: new Date(2023, 3, 10), category: "fabricaBolo", title:"Sony Bolo", value: 66.00 },

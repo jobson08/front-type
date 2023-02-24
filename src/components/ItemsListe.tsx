@@ -1,12 +1,11 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import CardTicket from "../components/CardInfor";
-import { RiArrowLeftSLine, RiArrowRightSLine, RiDeleteBin7Fill, RiEdit2Fill } from "react-icons/ri";
+import {  RiDeleteBin7Fill, RiEdit2Fill } from "react-icons/ri";
 import { Menu, MenuItem, MenuButton } from "@szhsin/react-menu";
 import "@szhsin/react-menu/dist/index.css";
 import "@szhsin/react-menu/dist/transitions/slide.css";
 import { Item } from 'types/Item';
-import { formatDate } from 'helpers/dateFilter';
+import { formatDate, convertAmericanFromBrazil } from 'helpers/dateFilter';
 
 type Props = {
     list: Item[]
@@ -35,13 +34,13 @@ const ItemsListe = ({list}:Props) => {
           </div>
           <div>
             <h5 className="md:hidden text-gray-600 font-bold mb-2">Categoria</h5>
-            <span className="py-1 px-2 bg-yellow-500/10 text-yellow-500 rounded-lg">
+            <span className="py-1 px-2 rounded-lg">
             {item.category}
             </span>
           </div>
           <div>
             <h5 className="md:hidden text-gray-600 font-bold mb-2">Valor</h5>
-            <span>R$: {item.value}</span>
+            <span>R$: {convertAmericanFromBrazil(item.value)}</span>
           </div>
           <div>
             <h5 className="md:hidden text-gray-600 font-bold mb-2">Data</h5>
