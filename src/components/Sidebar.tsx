@@ -22,17 +22,17 @@ function Sidebar() {
             </Link>
          </li>
          <li>
-            <Link to="/dashboard" className='flex items-center gap-2 py-2 px-4 rounded-lg text-slate-200 hover:bg-main-bg transition-colors'>
+            <Link to="/relaEntrada" className='flex items-center gap-2 py-2 px-4 rounded-lg text-slate-200 hover:bg-main-bg transition-colors'>
               <BsFillArrowUpCircleFill className='text-secondary' />Receita
             </Link>
          </li>
          <li>
-            <Link to="/dashboard" className='flex items-center gap-2 py-2 px-4 rounded-lg text-slate-200 hover:bg-main-bg transition-colors'>
+            <Link to="/relaDespesa" className='flex items-center gap-2 py-2 px-4 rounded-lg text-slate-200 hover:bg-main-bg transition-colors'>
               <BsFillArrowDownCircleFill className='text-secondary' />Despesas
             </Link>
          </li>
            <li>
-            <Link to="/dashboard" className='flex items-center gap-2 py-2 px-4 rounded-lg text-slate-200 hover:bg-main-bg transition-colors'>
+            <Link to="/category" className='flex items-center gap-2 py-2 px-4 rounded-lg text-slate-200 hover:bg-main-bg transition-colors'>
               <BsFillGridFill className='text-secondary' />Categorias
             </Link>
          </li>

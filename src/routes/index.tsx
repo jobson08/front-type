@@ -8,6 +8,7 @@ import ProfilePage from 'pages/ProfilePage';
 import SettingsPage from 'pages/SettingsPage';
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import CategoryPage from 'pages/reports/CategoryPage';
 
 function AppRoutes() {
       return (
@@ -23,6 +24,7 @@ function AppRoutes() {
                               <Route path="relaDespesa" element={<ExpenseReportPage />} />
                               <Route path="settings" element={<SettingsPage />} />
                               <Route path="profile" element={<ProfilePage/>} />
+                              <Route path="category" element={<CategoryPage/>} />
                         </Route>
                         {/*Error 404*/}
                         <Route path="*" element={<Error />} />

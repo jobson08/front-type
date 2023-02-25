@@ -23,7 +23,7 @@ const ItemsListe = ({list}:Props) => {
           <h5>Ações</h5>
     </div>
         {list.map((item) =>(
-        <div key={item.id} className="grid grid-cols-1 md:grid-cols-6 gap-4 items-center mb-4 bg-gray-200 p-4 rounded-xl">
+        <div key={item.id} className="grid grid-cols-1 md:grid-cols-6 gap-4 items-center mb-2 bg-gray-200 p-4 rounded-xl">
           <div>
             <h5 className="md:hidden text-gray-600 font-bold mb-2">ID</h5>
             <span>{item.id}</span>
