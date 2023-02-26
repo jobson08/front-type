@@ -15,7 +15,7 @@ function AppRoutes() {
             <BrowserRouter>
                   <Routes>
                         <Route path="/" element={(<LoginPage />)} />
-                        <Route path="/registero" element={(<RegisterPage />)} />
+                        <Route path="/register" element={(<RegisterPage />)} />
                         <Route path="/forget" element={(<ForgetPasswordPage />)} />
                         {/*Pages admin */}
                         <Route path="/" element={<LayoutAdmin />} >

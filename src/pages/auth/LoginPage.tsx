@@ -1,19 +1,27 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React, { useState } from 'react'
-import { Link} from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import { RiEyeFill, RiEyeOffFill, RiLockLine, RiMailLine } from 'react-icons/ri'
+
 
 const Login = () => {
   // eslint-disable-next-line no-unused-vars
+  const history = useNavigate();
+
+  const handleClick = () =>{
+    history('/dashboard')
+  }
+
   const [showPassword, setShouPassword] = useState(false)
   return (
 <div className="grid grid-cols-1 bg-gray-300 lg:grid-cols-2 min-h-screen">
-    <div className="flex flex-col items-center justify-center bg-[#252831] rounded-tl-lg rounded-bl-lg p-4">
+    <div className="flex flex-col items-center justify-center bg-[#252831] rounded-tl-lg rounded-bl-lg p-2">
       <div className="my-2 mt-0">
-        <img src="financ.png" alt="JT Devs" width="100" height="100" />
+        <img src="financ.png" alt="JT Devs" width="80" height="80" />
       </div>
       <div className="flex flex-col items-center gap-4">
         <h1 className="text-4xl font-bold text-gray-100">Bem vindo</h1>
-        <button className="flex items-center gap-1 bg-blue-500 text-white py-1 px-4 rounded-lg hover:bg-blue-600 transition-colors">
+        <button className="flex items-center gap-1 bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600 transition-colors">
           <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
               <g>
                   <path fill="none" d="M0 0h24v24H0z"></path>
@@ -75,9 +83,10 @@ const Login = () => {
           </div>
           <div className="w-full max-w-md mx-auto">
             <button
+            onClick={handleClick}
               type="submit"
               className="w-full bg-blue-500 py-2 px-4 text-white rounded-md hover:bg-blue-600 transition-colors"
-            >
+           >
               Iniciar sessão
             </button>
           </div>
@@ -85,7 +94,7 @@ const Login = () => {
         </form>
       </div>
       <div>
-        <span className="text-gray-500">
+        <span className="text-xl font-bold text-gray-300">
           Criar uma conta {" "}
           <Link
            to='/register'

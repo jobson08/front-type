@@ -12,8 +12,8 @@ function Sidebar() {
     <div className={`xl:h-[100vh] fixed xl:static w-[70%] md:w-[40%] lg:w[30%] xl:w-auto h-full p-5 top-0 flex flex-col justify-between z-50 bg-sidebar-bg
     ${showMenu ? "left-0" : "left-full"} transition-all`} >
       <div>
-        <h1 className='text-center text-2xl font-bol text-white mb-10'>
-          ADMIN<span className='text-secondary text-4xl'>@</span>
+        <h1 className='flex items-center text-center text-2xl font-bol text-white mb-10'>
+          ADMIN<img src="financ.png" alt="JT Devs" width="40" height="40 " />
         </h1>
         <ul>
          <li> 
