@@ -62,6 +62,14 @@ function Sidebar() {
                     Relatorio Saida
                   </Link>
               </li>
+              <li> 
+                  <Link to="/totalReport" className='py-2 px-4 border-l text-gray-100 rounded-lg border-green-300 ml-6 block relative before:w-3 
+                  before:h-3 before:absolute before:bg-gree1-bg before:rounded-full before:-left-[6.5px] 
+                  before:top-1/2 before:-translate-y-1/2 before:border-4 before:border-secondary hover:bg-main-bg
+                  transition-colors'>
+                    Relatorio Total
+                  </Link>
+              </li>
             </ul>
            </li>
 

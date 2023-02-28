@@ -48,7 +48,7 @@ const DashboardPage = () => {
 
    const valueTotal=(income-expense)
   return (
-    <div>
+<div>
       {/*TEMPORIZADOR */}
       <div className='bg-secondary2-bg p-2 rounded-xl mt-1 shadow-xl'>
         <InfoArea
@@ -220,7 +220,7 @@ const DashboardPage = () => {
      <hr className="border border-dashed border-gray-500/50 my-4" />
      <div>
        <Link
-         to="/relaDespesa"
+         to="/totalReport"
          className="flex items-center gap-2 text-text-gray-800 font-bold hover:underline"
        >
          <RiAddLine /> Detalhes
@@ -235,10 +235,10 @@ const DashboardPage = () => {
           <h1 className="text-2xl text-blue tex-bold my-2">Transação recentes</h1>
           <hr className="border border-dashed border-gray-500/50 my-2" />
         </div>
-        < ItemsListe list={filteredList} />
+        < ItemsListe list={filteredList}  />
       </div>
 
-    </div>
+</div>
   )
 };
 
