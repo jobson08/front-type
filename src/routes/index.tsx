@@ -2,7 +2,7 @@ import LayoutAdmin from 'layouts/LayoutAdmin';
 import { ExpenseReportPage, ForgetPasswordPage, RegisterPage } from 'pages/';
 import LoginPage from 'pages/auth/LoginPage';
 import DashboardPage from 'pages/DashboardPage';
-import EntryReportPage from 'pages/reports/EntryReportPage';
+import EntryReportPage from 'pages/reports/IncomReportPage';
 import Error from 'pages/Error';
 import ProfilePage from 'pages/ProfilePage';
 import SettingsPage from 'pages/SettingsPage';

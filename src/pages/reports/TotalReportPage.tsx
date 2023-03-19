@@ -1,8 +1,11 @@
+import Pagination from 'components/Paginatior'
 import React from 'react'
 
 const TotalReportPage = () => {
   return (
-    <div>TotalReportPage</div>
+    <div>TotalReportPage
+      <Pagination />
+    </div>
   )
 }
 

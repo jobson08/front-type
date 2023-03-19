@@ -1,5 +1,5 @@
 import {Item} from '../types/Item'
-export const entryitem: Item[] =[
+export const incomItem: Item[] =[
     {id: 1, date: new Date(2022, 11, 9), category: "padariaIncom", title:"Entrada dia", value: 50.00 },
     {id: 2, date: new Date(2022, 11, 9), category: "padariaIncom", title:"Entrada tarde", value: 150.00 },
     {id: 344, date: new Date(2022, 12, 20), category: "padariaIncom", title:"Loja 1", value: 230.00 },

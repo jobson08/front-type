@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import {  RiDeleteBin7Fill, RiEdit2Fill } from "react-icons/ri";
+import {  RiDeleteBin7Fill, RiEdit2Fill, RiSearch2Line } from "react-icons/ri";
 import { Menu, MenuItem, MenuButton } from "@szhsin/react-menu";
 import "@szhsin/react-menu/dist/index.css";
 import "@szhsin/react-menu/dist/transitions/slide.css";
 import { formatDate, convertAmericanFromBrazil } from 'helpers/dateFilter';
 import { expenseItem } from 'data/expenseItem';
+
 
 
 function ExpenseReportPage() {
@@ -87,9 +88,19 @@ function ExpenseReportPage() {
  
  
          {/* Lista tranzaçôes recentes*/}
-         <div className="bg-secondary2-bg p-2 rounded-xl mt-5 shadow-xl">
+         <div className="bg-secondary2-bg p-6 rounded-xl mt-5 shadow-xl">
          <div>
-           <h1 className="text-2xl text-blue tex-bold my-2">Transação recentes</h1>
+           <h1 className="text-2xl text-blue tex-bold ">Transação recentes</h1>
+           <form className='flex justify-end' >
+            <div className="relative">
+              <RiSearch2Line className="absolute top-1/2 -translate-y-1/2 left-4" />
+              <input
+                type="text"
+                className="bg-gray-200 outline-none py-2 pr-4 pl-10 rounded-lg placeholder:text-gray-500 w-full"
+                placeholder="Pequisar"
+              />
+            </div>
+          </form>
            <hr className="border border-dashed border-gray-500/50 my-2" />
          </div>
          <div className="hidden md:grid grid-cols-1 md:grid-cols-6 gap-4 mb-5 p-4">
@@ -101,7 +112,7 @@ function ExpenseReportPage() {
            <h5>Ações</h5>
      </div>
          {expenseItem.map((item) =>(
-         <div key={item.id} className="grid grid-cols-1 md:grid-cols-6 gap-4 items-center mb-2 bg-red-200 p-4 rounded-xl">
+         <div key={item.id} className="grid grid-cols-1 md:grid-cols-6 gap-4 items-center mb-2 bg-red-200 p-2 rounded-xl">
            <div>
              <h5 className="md:hidden text-gray-600 font-bold mb-2">ID</h5>
              <span>{item.id}</span>
@@ -160,6 +171,8 @@ function ExpenseReportPage() {
            </div>  
          </div>
          ))}
+         <div className='flex justify-end'>
+         </div>   
        </div>
  </div>
  )
