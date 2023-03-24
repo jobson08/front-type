@@ -1,3 +1,4 @@
+import { Account } from "data/server/models/Account";
 export type PaginationType = {
     length: number;
     size: number;

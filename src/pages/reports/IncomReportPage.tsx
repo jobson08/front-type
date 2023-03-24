@@ -10,7 +10,8 @@ import { formatDate, convertAmericanFromBrazil } from 'helpers/dateFilter';
 //import { PaginationType } from 'types/PaginationType';
 //import PaginationT from 'components/PaginationT';
 import Paginatior from 'components/Paginatior';
-import { incomItem } from 'data/incomItem';
+import { incomeItem } from 'data/test/incomeItem';
+
 
 const  IncomReportPage = () => {
  /*
@@ -127,7 +128,7 @@ const  IncomReportPage = () => {
           <h5>Data</h5>
           <h5>Ações</h5>
         </div>
-        {incomItem?.map((item, index) => (
+        {incomeItem?.map((item, index) => (
           <div key={index} className="grid grid-cols-1 md:grid-cols-6 gap-2 items-center mb-2 bg-blue-200 p-2 rounded-xl">
             <div>
               <h5 className="md:hidden text-gray-600 font-bold mb-2">ID</h5>

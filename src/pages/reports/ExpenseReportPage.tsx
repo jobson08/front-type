@@ -5,7 +5,9 @@ import { Menu, MenuItem, MenuButton } from "@szhsin/react-menu";
 import "@szhsin/react-menu/dist/index.css";
 import "@szhsin/react-menu/dist/transitions/slide.css";
 import { formatDate, convertAmericanFromBrazil } from 'helpers/dateFilter';
-import { expenseItem } from 'data/expenseItem';
+import { expenseItem } from 'data/test/expenseItem';
+//import PaginationT from 'components/PaginationT';
+import Paginatior from 'components/Paginatior';
 
 
 
@@ -172,6 +174,9 @@ function ExpenseReportPage() {
          </div>
          ))}
          <div className='flex justify-end'>
+          <Paginatior
+          
+          />
          </div>   
        </div>
  </div>

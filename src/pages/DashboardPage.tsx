@@ -6,11 +6,11 @@ import "@szhsin/react-menu/dist/transitions/slide.css";
 import{convertAmericanFromBrazil} from'../helpers/dateFilter'
 
 import { Item } from "types/Item";
-import { items } from "data/items";
+import { items } from "../data/test/items";
 import { filterListByMonth, getCurrentMonth} from "helpers/dateFilter";
 import ItemsListe from "components/ItemsListe";
 import InfoArea from "components/InfoArea";
-import { categories } from "data/categories";
+import { categories } from "data/test/categories";
 import { Link } from "react-router-dom";
 import { RiAddLine, RiBarChart2Fill, RiDownload2Fill, RiExternalLinkFill} from "react-icons/ri";
 

@@ -9,11 +9,12 @@ import { Menu, MenuButton, MenuItem } from "@szhsin/react-menu";
 
 
 import { Item } from "types/Item";
-import { items } from "data/items";
+
 import { filterListByMonth, getCurrentMonth} from "helpers/dateFilter";
 import ItemsListe from "components/ItemsListe";
 import InfoArea from "components/InfoArea";
-import { categories } from "data/categories";
+import { categories } from "data/test/categories";
+import { items } from "data/test/items";
 
 const CardInfor2 =() => {
 
