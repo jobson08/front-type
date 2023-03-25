@@ -1,5 +1,7 @@
+import { Menu, MenuButton, MenuItem } from '@szhsin/react-menu'
 import React from 'react'
-import { RiSearch2Line } from 'react-icons/ri'
+import { RiDeleteBin7Fill, RiEdit2Fill, RiSearch2Line } from 'react-icons/ri'
+import { Link } from 'react-router-dom'
 
 const Account = () => {
   return (
@@ -65,14 +67,15 @@ const Account = () => {
           </form>
           <hr className="border border-dashed border-gray-500/50 my-2" />
 
-          <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-4 mb-5 p-4">
+          <div className="hidden md:grid grid-cols-1 md:grid-cols-4 gap-4 mb-5 p-4">
             <h5>ID</h5>
             <h5>Nome</h5>
             <h5>Valor</h5>
+            <h5>Açoes</h5>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-2 items-center mb-2 bg-blue-200 p-2 rounded-xl">
-          <div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-2 items-center mb-2 bg-blue-200 p-2 rounded-xl">
+            <div>
               <h5 className="md:hidden text-gray-600 font-bold mb-2">ID</h5>
               <span>1</span>
             </div>
@@ -86,8 +89,46 @@ const Account = () => {
                 300,00
               </span>
             </div>
+
+            <div>
+            <h5 className="md:hidden text-gray-600 font-bold mb-2">Ações</h5>
+            {/* Menu Editar Deletar*/}
+            <div>
+              <Menu
+                menuButton={
+                  <MenuButton className="flex items-center gap-x-2 bg-secondary2-bg p-2 rounded-lg transition-colors">
+                    Açoes
+                  </MenuButton>
+                }
+                align="end"
+                arrow
+                arrowClassName="bg-gray-300"
+                transition
+                menuClassName="bg-gray-300 p-4"
+              >
+                <MenuItem className="p-0 hover:bg-transparent">
+                  <Link
+                    to="/perfil"
+                    className="rounded-lg transition-colors text-green-700 hover:bg-gray-100 flex items-center gap-x-4 p-2 flex-1"
+                  >
+                    <RiEdit2Fill />
+                    Editar
+                  </Link>
+                </MenuItem>
+                <MenuItem className="p-0 hover:bg-transparent">
+                  <Link
+                    to="/perfil"
+                    className="rounded-lg transition-colors text-red-700 hover:bg-gray-100 flex items-center gap-x-4 p-2 flex-1"
+                  >
+                    <RiDeleteBin7Fill />
+                    Excluir
+                  </Link>
+                </MenuItem>
+              </Menu>
+            </div>
           </div>
 
+          </div>
         </div>
       </div>
 
