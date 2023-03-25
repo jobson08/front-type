@@ -1,5 +1,6 @@
+import { PaginationType } from 'data/server/models/pagination';
 import React, { useState } from 'react';
-import { PaginationType } from 'types/PaginationType';
+
 import {AiOutlineLeft, AiOutlineRight, AiOutlineDoubleRight, AiOutlineDoubleLeft} from 'react-icons/ai';
 
 type Props = {
