@@ -1,10 +1,13 @@
+import React, { useState } from 'react'
 import { Menu, MenuButton, MenuItem } from '@szhsin/react-menu'
-import React from 'react'
 import { BsFillCalculatorFill } from 'react-icons/bs'
 import { RiDeleteBin7Fill, RiEdit2Fill, RiSearch2Line } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 
 const CategoryPage = () => {
+ // const [inpuExpense, setInpuExpense]=useState(true)
+  //const [inpIncome, setInpIncome]=useState(false)
+
   return (
     <div className='grid grid-cols-1 md:grid-cols-2 gap-4 '>
     {/* Form lançamento*/}
@@ -41,15 +44,14 @@ const CategoryPage = () => {
           </div>
           
           <div className='flex space-x-2 items-center'>
-            <input type="checkbox" className='rounded-lg'/> 
-            <p className='text-1xl'>Despesa</p>
+            <input type="radio" name="category" id="iExpense" value="iExpense" checked className='rounded-lg'/> 
+            <label htmlFor="iExpense" className='text-1xl'>Despesa</label>
           </div>
 
-          <div className='flex space-x-2 items-center'>
-          <input type="checkbox" className='rounded-lg'/> 
-          <p className='text-1xl'>Receita</p>
-          </div>
-          
+        <div className='flex space-x-2 items-center'>
+          <input type="radio" name="category" id="iIncome" value="iIncome" className='rounded-lg'/> 
+          <label htmlFor="iIncome" className='text-1xl'>Receita</label>
+        </div>
 
         </div>
       </form>
@@ -81,35 +83,37 @@ const CategoryPage = () => {
         <hr className="border border-dashed border-gray-500/50 my-2" />
 
         <div className="hidden md:grid grid-cols-1 md:grid-cols-4 gap-4 mb-5 p-4">
-          <h5>ID</h5>
+          {/*<h5>ID</h5>*/}
           <h5>Nome</h5>
           <h5>icone</h5>
+          <h5>Tipo</h5>
           <h5>Açoes</h5>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-2 items-center mb-2 bg-blue-200 p-2 rounded-xl">
-          <div>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-2 items-center mb-2 shadow bg-slate-200 p-2 rounded-xl hover:shadow-md">
+        {/*  <div>
             <h5 className="md:hidden text-gray-600 font-bold mb-2">ID</h5>
             <span>1</span>
-          </div>
+             </div>*/}
           <div>
             <h5 className="md:hidden text-gray-600 font-bold mb-2">Nome</h5>
             <p>Despesa pessoal</p>
           </div>
           <div>
             <h5 className="md:hidden text-gray-600 font-bold mb-2">icone</h5>
-            <span className="py-1 px-2 rounded-lg">
-            <BsFillCalculatorFill />
-            </span>
+            <BsFillCalculatorFill  className='w-8 h-8 text-red-500' />
           </div>
-
+          <div>
+            <h5 className="md:hidden font-bold text-gray-600 mb-2">Tipo</h5>
+            <p className='text-red-500'>Despesa</p>
+          </div>
           <div>
           <h5 className="md:hidden text-gray-600 font-bold mb-2">Ações</h5>
           {/* Menu Editar Deletar*/}
           <div>
             <Menu
               menuButton={
-                <MenuButton className="flex items-center gap-x-2 bg-secondary2-bg p-2 rounded-lg transition-colors">
+                <MenuButton className="flex items-center gap-x-2 bg-blue-200 p-2 rounded-lg transition-colors">
                   Açoes
                 </MenuButton>
               }
