@@ -3,8 +3,10 @@ import { Menu, MenuButton, MenuItem } from '@szhsin/react-menu'
 import { BsFillCalculatorFill } from 'react-icons/bs'
 import { RiDeleteBin7Fill, RiEdit2Fill, RiSearch2Line } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
+import Modal from 'components/Modal'
 
 const CategoryPage = () => {
+  const [showModal, setShowModal] = useState<boolean>(false)
  /* const [radioValue, setRadioValue]=useState("iExpense")
   const isRadioSelected = (value:string) : boolean => true
 
@@ -15,9 +17,17 @@ useEffect(()=> {
  }, [])*/
 
   return (
-    <div className='grid grid-cols-1 md:grid-cols-2 gap-4 '>
-    {/* Form lançamento*/}
-    <div className=' w-30 bg-secondary2-bg p-4 rounded-xl mb-5'>
+    
+  <div>
+      <div className='flex justify-end'>
+        <button onClick={() => setShowModal(true)}
+         className='bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-cyan-500 transition-colors'>
+         Cadastrar
+        </button>
+      </div>
+    {/* Form modal lançamento*/}
+    <Modal show={showModal} setShow={setShowModal}>
+   <div className=' w-30 bg-secondary2-bg p-4 rounded-xl mb-5'>
       <h1 className='text-xl text-black'>Cadastrar Categoria</h1>
       <hr className='my-4 border-gree1-bg' />
       <form>
@@ -64,16 +74,20 @@ useEffect(()=> {
         </div>
       </form>
       <hr className='my-4 border-gree1-bg' />
-      <div className='flex justify-end'>
-        <button className='bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-cyan-500 transition-colors'>
-          Salvar
-        </button>
-      </div>
+      <div className='flex justify-end space-x-2 pt-2'>
+         <button onClick={() => setShowModal(false)}
+            className='bg-red-600 text-white font-bold py-2 px-4 ml-2 rounded-lg hover:bg-red-400 transition-colors'>
+            Cancelar
+          </button>
+          <button className='bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-cyan-500 transition-colors'>
+            Salvar
+          </button>
+        </div>
     </div>
+   </Modal>
 
-    <div className="bg-secondary2-bg p-4 rounded-xl mb-2 ">
-      <div>
 
+    <div className=" bg-secondary2-bg p-4 mt-5 rounded-xl mb-2 ">
         {/* search*/}
         <form >
           <div className='flex justify-end items-center justify-betwee gap-10'>
@@ -155,8 +169,6 @@ useEffect(()=> {
 
         </div>
       </div>
-    </div>
-
   </div>
   )
 }
