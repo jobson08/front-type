@@ -1,12 +1,18 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Menu, MenuButton, MenuItem } from '@szhsin/react-menu'
 import { BsFillCalculatorFill } from 'react-icons/bs'
 import { RiDeleteBin7Fill, RiEdit2Fill, RiSearch2Line } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 
 const CategoryPage = () => {
- // const [inpuExpense, setInpuExpense]=useState(true)
-  //const [inpIncome, setInpIncome]=useState(false)
+ /* const [radioValue, setRadioValue]=useState("iExpense")
+  const isRadioSelected = (value:string) : boolean => true
+
+  const handleRadioClick = (e: React.ChangeEvent<HTMLInputElement>): void
+useEffect(()=> {
+  const dbResult = getRadioFromDb();
+  setRadioValue(dbResult);
+ }, [])*/
 
   return (
     <div className='grid grid-cols-1 md:grid-cols-2 gap-4 '>
@@ -44,12 +50,14 @@ const CategoryPage = () => {
           </div>
           
           <div className='flex space-x-2 items-center'>
-            <input type="radio" name="category" id="iExpense" value="iExpense" checked className='rounded-lg'/> 
+            <input type="radio" name="category" id="iExpense" value="iExpense" checked 
+            className='rounded-lg'/> 
             <label htmlFor="iExpense" className='text-1xl'>Despesa</label>
           </div>
 
         <div className='flex space-x-2 items-center'>
-          <input type="radio" name="category" id="iIncome" value="iIncome" className='rounded-lg'/> 
+          <input type="radio" name="category" id="iIncome" value="iIncome"
+          className='rounded-lg'/> 
           <label htmlFor="iIncome" className='text-1xl'>Receita</label>
         </div>
 
@@ -90,7 +98,7 @@ const CategoryPage = () => {
           <h5>Açoes</h5>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-2 items-center mb-2 shadow bg-slate-200 p-2 rounded-xl hover:shadow-md">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-2 items-center mb-2 shadow bg-slate-200 p-2 rounded-xl">
         {/*  <div>
             <h5 className="md:hidden text-gray-600 font-bold mb-2">ID</h5>
             <span>1</span>

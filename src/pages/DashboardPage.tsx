@@ -22,8 +22,9 @@ const DashboardPage = () => {
   const [income, setIncome] = useState(0);
   const [expense, setExpense] = useState(0);
 
+  //monitora a mudança da lista e o mes atual
   useEffect(() => {
-    setFilteredList(filterListByMonth(list, currentMonth))
+    setFilteredList(filterListByMonth(list, currentMonth)) // seta lista filtrada adicionando lista e data
   }, [list, currentMonth]);
   
   const handleMonthChange = (newMonth: string) =>{
@@ -31,19 +32,19 @@ const DashboardPage = () => {
   }
 
  useEffect(()=>{
-    let incomeCount = 0;
+    let incomeCount = 0; // quando o filterLista for modificao zera receita e despesa
     let expenseCount = 0;
 
-    for(let i in filteredList) {
-      if(categories[filteredList[i].category].expense) {
-        expenseCount += filteredList[i].value;
+    for(let i in filteredList) { 
+      if(categories[filteredList[i].category].expense) { 
+        expenseCount += filteredList[i].value; // se categoria for despesa  soma com o valor
       } else {
-        incomeCount += filteredList[i].value;
+        incomeCount += filteredList[i].value; //se não categoria for reseita soma com o valor
       }
     }
 
-    setIncome (incomeCount);
-    setExpense(expenseCount);
+    setIncome (incomeCount); // seta o valor receita 
+    setExpense(expenseCount); //seta valor despesa
   }, [filteredList]);
 
    const valueTotal=(income-expense)
@@ -215,7 +216,7 @@ const DashboardPage = () => {
      {/* Number of tickets */}
      <div>
        <h1 className= {`text-4xl font-bold mb-4 ${valueTotal >= 0 ? 'text-red' : 'text-green'}`}>R$: {convertAmericanFromBrazil(valueTotal)}</h1>
-       <p className=" text-green-500">Total Mess</p>
+       <p className=" text-green-500">Total Mes</p>
      </div>
      <hr className="border border-dashed border-gray-500/50 my-4" />
      <div>
