@@ -14,7 +14,7 @@ type Props = {
 const ItemsListe = ({list}:Props) => {
   return (
  <div>
-     <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-4 mb-5 p-4">
+     <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-2 mb-2 p-2">
          {/*  <h5>ID</h5>*/}
           <h5>Titulo</h5>
          {/*<h5>Categoria</h5>*/}
