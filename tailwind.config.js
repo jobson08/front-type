@@ -13,6 +13,11 @@ module.exports = {
         'primary': '#0095e8',
         'secondary': '#52c93f',
       },
+      primary2: {
+        100: "#3A00B0",
+        300: "#29007D",
+        900: "#120037",
+      },
 
       backgroundColor: {
         'main-bg': '#006Aff',

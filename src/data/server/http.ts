@@ -2,6 +2,7 @@ import Axios, {AxiosInstance} from "axios";
 
 
 export const httpClient: AxiosInstance = Axios.create({
-    baseURL: process.env.BASEURL,
-    withCredentials: false,
+    baseURL: "http://localhost:3002",
+    //baseURL: process.env.BASEURL,
+   withCredentials: false,
 });

@@ -14,30 +14,30 @@ type Props = {
 const ItemsListe = ({list}:Props) => {
   return (
  <div>
-     <div className="hidden md:grid grid-cols-1 md:grid-cols-6 gap-4 mb-5 p-4">
-          <h5>ID</h5>
+     <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-4 mb-5 p-4">
+         {/*  <h5>ID</h5>*/}
           <h5>Titulo</h5>
-          <h5>Categoria</h5>
+         {/*<h5>Categoria</h5>*/}
           <h5>Valor</h5>
           <h5>Data</h5>
-          <h5>Ações</h5>
+          {/*  <h5>Ações</h5>*/}
     </div>
         {list.map((item) =>(
-        <div key={item.id} className="grid grid-cols-1 md:grid-cols-6 gap-4 items-center mb-2 bg-gray-200 p-4 rounded-xl">
-          <div>
+        <div key={item.id} className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center mb-2 bg-gray-200 p-4 rounded-xl">
+           {/* <div>
             <h5 className="md:hidden text-gray-600 font-bold mb-2">ID</h5>
             <span>{item.id}</span>
-          </div>
+          </div>*/}
           <div>
             <h5 className="md:hidden text-gray-600 font-bold mb-2">Descrição</h5>
             <p>{item.title}</p>
           </div>
-          <div>
+          {/*  <div>
             <h5 className="md:hidden text-gray-600 font-bold mb-2">Categoria</h5>
             <span className="py-1 px-2 rounded-lg">
             {item.category}
             </span>
-          </div>
+          </div>*/}
           <div>
             <h5 className="md:hidden text-gray-600 font-bold mb-2">Valor</h5>
             <span>R$: {convertAmericanFromBrazil(item.value)}</span>
@@ -46,7 +46,7 @@ const ItemsListe = ({list}:Props) => {
             <h5 className="md:hidden text-gray-600 font-bold mb-2">Data</h5>
             <span>{formatDate(item.date)}</span>
           </div>
-          <div>
+          {/*  <div>
             <h5 className="md:hidden text-gray-600 font-bold mb-2">Ações</h5>
             <Menu
               menuButton={
@@ -79,7 +79,7 @@ const ItemsListe = ({list}:Props) => {
                 </Link>
               </MenuItem>
             </Menu>
-          </div>  
+          </div>  */}
         </div>
         ))}
     </div>

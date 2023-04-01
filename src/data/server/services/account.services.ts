@@ -1,16 +1,17 @@
-import { Account } from "data/server/models";
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { AxiosResponse } from "axios";
 import { httpClient } from "data/server/http";
-import { PaginationType } from "data/server/models/pagination";
+import { AccountModel } from "data/server/models";
+import { PaginationType } from "data/server/models/Pagination";
 
 type ResultType = {
-    results: Account[];
+    results: AccountModel[];
     pagination: PaginationType;
 };
 const appUrl = '/account'
 
 export const useAccountService = () => {
-    const loadPageUnity = async (
+    const loadPageAccount = async (
         page = 0,
         size = 25,
         search = "",
@@ -19,22 +20,30 @@ export const useAccountService = () => {
     ) => {
         const url = `${process.env.BASEURL + appUrl
             }/pages?page=${page}&size=${size}&order=${order}&sort=${sort}&search=${search}`;
+           
+            const response: AxiosResponse<ResultType> = await httpClient.get(url);
+            return response
+    };
+
+    const loadPageAccontById = async (id: number | string) => {
+        const url = process.env.BASEURL + "/" + id;
+        const response: ResultType = await httpClient.get(url);  
     }
     
-    const create = async (account: Account) => {
+    const create = async (account: AccountModel) => {
         const url = process.env.BASEURL + appUrl;
 
-        const response: AxiosResponse<Account> = await httpClient.post<Account>(
+        const response: AxiosResponse<AccountModel> = await httpClient.post<AccountModel>(
             url,
             account
         );
         return response.data
     };
 
-    const update = async (account: Account) => {
+    const update = async (account: AccountModel) => {
         const url = process.env.BASEURL + appUrl + "/" + account.id;
 
-        const response: AxiosResponse<Account> = await httpClient.patch<Account>(
+        const response: AxiosResponse<AccountModel> = await httpClient.patch<AccountModel>(
             url,
             account
         );
@@ -44,7 +53,15 @@ export const useAccountService = () => {
     const remove = async (id: number) => {
         const url = process.env.BASEURL + appUrl + "/" + id;
 
-        const response: AxiosResponse<Account> = await httpClient.delete<Account>(url,);
+        const response: AxiosResponse<AccountModel> = await httpClient.delete<AccountModel>(url,);
         return response.data
+    };
+
+    return {
+        loadPageAccount,
+        loadPageAccontById,
+        create,
+        update,
+        remove 
     };
 }

@@ -1,4 +1,4 @@
-import { PaginationType } from 'data/server/models/pagination';
+import { PaginationType } from 'data/server/models/Pagination';
 import React, { useState } from 'react';
 
 import {AiOutlineLeft, AiOutlineRight, AiOutlineDoubleRight, AiOutlineDoubleLeft} from 'react-icons/ai';

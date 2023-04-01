@@ -4,6 +4,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 type Props = { children: any, show: boolean; setShow: Dispatch<SetStateAction<boolean>>; }
 
 const Modal = ({ children, show, setShow }: Props) => {
+    if (!show) return null
     return (
         <>
             {
@@ -22,7 +23,6 @@ const Modal = ({ children, show, setShow }: Props) => {
                 </div>
             }
         </>
-
     )
 }
 
