@@ -24,6 +24,13 @@ export const items: Item[] =[
     {id: 15, date: new Date(2023, 3, 10), category: "fabricaBoloIncom", title:"Sony Bolo", value: 66.00 },
     {id: 16, date: new Date(2023, 3, 10), category: "fabricaBolo", title:"Açucao", value: 70.00 },
     {id: 17, date: new Date(2023, 3, 11), category: "padaria", title:"Queijo", value: 240.00 },
+    
+    {id: 18, date: new Date(2023, 4, 9), category: "despesa", title:"Cartão Joselma", value: 300.00 },
+    {id: 19, date: new Date(2023, 4, 10), category: "fabricaBoloIncom", title:"Sony Bolo", value: 66.00 },
+    {id: 20, date: new Date(2023, 4, 10), category: "fabricaBolo", title:"Açucao", value: 70.00 },
+    {id: 21, date: new Date(2023, 4, 11), category: "padaria", title:"Queijo", value: 240.00 },
+    {id: 22, date: new Date(2023, 4, 12), category: "padaria", title:"Sony pão", value: 95.00 },
+    {id: 21, date: new Date(2023, 4, 11), category: "fabricaBoloIncom", title:"Loja 1", value: 85.00 },
    
 
 ]

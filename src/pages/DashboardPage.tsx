@@ -345,7 +345,7 @@ const DashboardPage = () => {
             {/* Lista tranzaçôes recentes*/}
             <div>
               <h1 className="text-2xl text-blue tex-bold my-2">Transação recentes</h1>
-              <hr className="border border-dashed border-gray-500/50 my-2" />
+              <hr className="border border-dashed border-gray-500/50 " />
             </div>
             < ItemsListe list={filteredList} />
             </div>
