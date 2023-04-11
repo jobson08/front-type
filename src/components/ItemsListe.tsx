@@ -1,7 +1,4 @@
 import React from 'react'
-import { Link } from "react-router-dom";
-import {  RiDeleteBin7Fill, RiEdit2Fill } from "react-icons/ri";
-import { Menu, MenuItem, MenuButton } from "@szhsin/react-menu";
 import "@szhsin/react-menu/dist/index.css";
 import "@szhsin/react-menu/dist/transitions/slide.css";
 import { Item } from 'types/Item';

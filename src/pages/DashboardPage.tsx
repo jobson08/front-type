@@ -1,7 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState, useEffect } from "react";
-import CardTicket from "../components/CardInfor";
-import avatar2 from '../data/image/avatar2.jpg'
 import avatar3 from '../data/image/avatar3.png'
 import avatar4 from '../data/image/avatar4.jpg'
 import "@szhsin/react-menu/dist/index.css";
@@ -14,7 +12,8 @@ import ItemsListe from "components/ItemsListe";
 import InfoArea from "components/InfoArea";
 import { categories } from "data/test/categories";
 import { Link } from "react-router-dom";
-import { RiAddLine, RiBarChart2Fill, RiDownload2Fill, RiExternalLinkFill, RiHashtag, RiLineChartLine } from "react-icons/ri";
+import { RiAddLine, RiBarChart2Fill, RiDownload2Fill, RiExternalLinkFill} from "react-icons/ri";
+import { Menu, MenuButton, MenuItem } from "@szhsin/react-menu";
 
 const DashboardPage = () => {
 
@@ -71,42 +70,43 @@ const DashboardPage = () => {
                 className={`text-4xl text-white bg-blue-500 p-2 box-content rounded-xl`}
               />
             </div>
-            <div>
-              {/*             <Menu
-           menuButton={
-             <MenuButton className="flex items-center gap-x-2 hover:bg-gray-100 rounded-lg transition-colors">
-               <RiMore2Fill />
-             </MenuButton>
-           }
-           align="end"
-           arrow
-           arrowClassName="bg-secondary2-bg"
-           transition
-           menuClassName="bg-secondary2-bg p-4"
-         >
-           <MenuItem className="p-0 hover:bg-transparent">
-             <Link
-               to="/perfil"
-               className="rounded-lg transition-colors text-gray-800 hover:bg-gray-100 flex items-center gap-x-4 p-2 flex-1"
-             >
-               Detalhes
-             </Link>
-           </MenuItem>
-           <MenuItem className="p-0 hover:bg-transparent">
-             <Link
-               to="/perfil"
-               className="rounded-lg transition-colors text-gray-800 hover:bg-gray-100 flex items-center gap-x-4 p-2 flex-1"
-             >
-               Informação
-             </Link>
-           </MenuItem>
-         </Menu>*/}
+     <div>
+          {/*
+            <Menu
+                menuButton={
+                  <MenuButton className="flex items-center gap-x-2 hover:bg-gray-100 rounded-lg transition-colors">
+                    <RiMore2Fill />
+                  </MenuButton>
+                }
+                align="end"
+                arrow
+                arrowClassName="bg-secondary2-bg"
+                transition
+                menuClassName="bg-secondary2-bg p-4"
+              >
+                <MenuItem className="p-0 hover:bg-transparent">
+                  <Link
+                    to="/perfil"
+                    className="rounded-lg transition-colors text-gray-800 hover:bg-gray-100 flex items-center gap-x-4 p-2 flex-1"
+                  >
+                    Detalhes
+                  </Link>
+                </MenuItem>
+                <MenuItem className="p-0 hover:bg-transparent">
+                  <Link
+                    to="/perfil"
+                    className="rounded-lg transition-colors text-gray-800 hover:bg-gray-100 flex items-center gap-x-4 p-2 flex-1"
+                  >
+                    Informação
+                  </Link>
+                </MenuItem>
+              </Menu>*/}
             </div>
           </div>
           {/* Number of tickets */}
           <div >
             <h1 className='text-4xl font-bold mb-4 '>R$: {convertAmericanFromBrazil(income)}</h1>
-            <p className=" text-blue-500">Total Receitas</p>
+            <p className=" text-blue-500 font-bold">Total Receitas</p>
           </div>
           <hr className="border border-dashed border-gray-500/50 my-4" />
           <div>
@@ -128,7 +128,8 @@ const DashboardPage = () => {
             </div>
 
             <div>
-              {/*             <Menu
+        {/*          
+          <Menu
            menuButton={
              <MenuButton className="flex items-center gap-x-2 hover:bg-gray-100 rounded-lg transition-colors">
                <RiMore2Fill />
@@ -162,7 +163,7 @@ const DashboardPage = () => {
           {/* Number of tickets */}
           <div>
             <h1 className='text-4xl font-bold mb-4 '>R$: {convertAmericanFromBrazil(expense)}</h1>
-            <p className=" text-red-500">Total Despesas</p>
+            <p className=" text-red-500 font-bold">Total Despesas</p>
           </div>
           <hr className="border border-dashed border-gray-500/50 my-4" />
           <div>
@@ -218,7 +219,7 @@ const DashboardPage = () => {
           {/* Number of tickets */}
           <div>
             <h1 className={`text-4xl font-bold mb-4 ${valueTotal >= 0 ? 'text-red' : 'text-green'}`}>R$: {convertAmericanFromBrazil(valueTotal)}</h1>
-            <p className=" text-green-500">Total Mes</p>
+            <p className=" text-green-500 font-bold">Total Mes</p>
           </div>
           <hr className="border border-dashed border-gray-500/50 my-4" />
           <div>
@@ -343,9 +344,42 @@ const DashboardPage = () => {
             <div className="bg-white p-4 rounded-xl shadow-2xl mb-4 flex flex-col gap-4">
           
             {/* Lista tranzaçôes recentes*/}
-            <div>
-              <h1 className="text-2xl text-blue tex-bold my-2">Transação recentes</h1>
-              <hr className="border border-dashed border-gray-500/50 " />
+            <div className="flex flex-col">
+              <h1 className="text-2xl text-blue font-bold my-2 ">Transação recentes</h1>
+              <div className="flex justify-end">
+                <Menu
+                  menuButton={
+                    <MenuButton className="flex items-center gap-x-2 bg-primary text-red-50 font-bold p-2 rounded-lg transition-colors">
+                      Nova Transacões
+                    </MenuButton>
+                  }
+                  align="end"
+                  arrow
+                  arrowClassName="bg-gray-300"
+                  transition
+                  menuClassName="bg-gray-300 p-4"
+                >
+                  <MenuItem className="p-0 hover:bg-transparent">
+                    <Link
+                      to="/relaEntrada"
+                      className="rounded-lg transition-colors text-blue-700 font-bold hover:bg-gray-100 flex items-center gap-x-4 p-2 flex-1"
+                    >
+                      <RiExternalLinkFill />
+                      Receita
+                    </Link>
+                  </MenuItem>
+                  <MenuItem className="p-0 hover:bg-transparent">
+                    <Link
+                      to="/relaDespesa"
+                      className="rounded-lg transition-colors text-red-700 font-bold hover:bg-gray-100 flex items-center gap-x-4 p-2 flex-1"
+                    >
+                      <RiDownload2Fill />
+                      Despesa
+                    </Link>
+                  </MenuItem>
+                </Menu>
+              </div>
+              <hr className="border border-dashed border-gray-500/50 mt-5 " />
             </div>
             < ItemsListe list={filteredList} />
             </div>
