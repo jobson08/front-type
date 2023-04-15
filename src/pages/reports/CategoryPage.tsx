@@ -102,9 +102,9 @@ const CategoryPage = () => {
         {/* Card 1 */}
         <div className="col-span-1 md:col-span-2 flex flex-col justify-between">
           <div className="bg-white p-8 rounded-xl shadow-2xl">
-          <div className='flex justify-end items-center justify-betwee gap-10'>
-            <h1 className="text-2xl text-blue tex-bold ">Categorias</h1>
-            <div className="relative m-2">
+            <h1 className="text-2xl font-bold ">Categorias</h1>
+           <div className="flex justify-end">
+            <div className=" relative m-2">
               <RiSearch2Line className="absolute top-1/2 -translate-y-1/2 left-4" />
               <input
                 type="text"
@@ -112,7 +112,7 @@ const CategoryPage = () => {
                 placeholder="Pequisar"
               />
             </div>
-          </div>
+         </div>
           <hr className='my-4 border-gree1-bg' />
             <div className="hidden md:grid grid-cols-1 md:grid-cols-4 gap-4 mb-5 p-4">
               {/*<h5>ID</h5>*/}
@@ -122,7 +122,7 @@ const CategoryPage = () => {
               <h5>Açoes</h5>
             </div>
 
-         <div className="grid grid-cols-1 md:grid-cols-4 gap-2 items-center mb-2 shadow bg-slate-200 p-2 rounded-xl">
+         <div className="grid grid-cols-1 md:grid-cols-4 gap-2 items-center mb-2 shadow bg-gray-200 p-2 rounded-xl">
               {/*  <div>
             <h5 className="md:hidden text-gray-600 font-bold mb-2">ID</h5>
             <span>1</span>
@@ -178,7 +178,7 @@ const CategoryPage = () => {
               </div>
             </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-2 items-center mb-2 shadow bg-slate-200 p-2 rounded-xl">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-2 items-center mb-2 shadow bg-gray-200 p-2 rounded-xl">
               {/*  <div>
             <h5 className="md:hidden text-gray-600 font-bold mb-2">ID</h5>
             <span>1</span>

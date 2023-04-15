@@ -6,4 +6,6 @@ export { default as CardInfor2} from './CardInfor2'
 export { default as Paginatior} from './Paginatior'
 export { default as PaginationT} from './PaginationT'
 export { default as Modal} from './Modal'
+export { default as Goal} from './Goal'
 export { default as PaginationPrimary} from './PaginationPrimary'
+

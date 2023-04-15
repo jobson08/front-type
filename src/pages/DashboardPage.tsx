@@ -14,6 +14,8 @@ import { categories } from "data/test/categories";
 import { Link } from "react-router-dom";
 import { RiAddLine, RiBarChart2Fill, RiDownload2Fill, RiExternalLinkFill} from "react-icons/ri";
 import { Menu, MenuButton, MenuItem } from "@szhsin/react-menu";
+import Goal from "components/Goal";
+import { Progress } from "@material-tailwind/react";
 
 const DashboardPage = () => {
 
@@ -106,7 +108,7 @@ const DashboardPage = () => {
           {/* Number of tickets */}
           <div >
             <h1 className='text-4xl font-bold mb-4 '>R$: {convertAmericanFromBrazil(income)}</h1>
-            <p className=" text-blue-500 font-bold">Total Receitas</p>
+            <p className="text-2xl text-blue-500 font-bold">Total Receitas</p>
           </div>
           <hr className="border border-dashed border-gray-500/50 my-4" />
           <div>
@@ -163,7 +165,7 @@ const DashboardPage = () => {
           {/* Number of tickets */}
           <div>
             <h1 className='text-4xl font-bold mb-4 '>R$: {convertAmericanFromBrazil(expense)}</h1>
-            <p className=" text-red-500 font-bold">Total Despesas</p>
+            <p className="text-2xl text-red-500 font-bold">Total Despesas</p>
           </div>
           <hr className="border border-dashed border-gray-500/50 my-4" />
           <div>
@@ -219,7 +221,7 @@ const DashboardPage = () => {
           {/* Number of tickets */}
           <div>
             <h1 className={`text-4xl font-bold mb-4 ${valueTotal >= 0 ? 'text-red' : 'text-green'}`}>R$: {convertAmericanFromBrazil(valueTotal)}</h1>
-            <p className=" text-green-500 font-bold">Total Mes</p>
+            <p className="text-2xl text-green-500 font-bold">Total Mes</p>
           </div>
           <hr className="border border-dashed border-gray-500/50 my-4" />
           <div>
@@ -341,8 +343,7 @@ const DashboardPage = () => {
           </div>
            {/* Card 4 */}
           <div>
-            <div className="bg-white p-4 rounded-xl shadow-2xl mb-4 flex flex-col gap-4">
-          
+        <div className="bg-white p-4 rounded-xl shadow-2xl mb-4 flex flex-col gap-4">
             {/* Lista tranzaçôes recentes*/}
             <div className="flex flex-col">
               <h1 className="text-2xl text-blue font-bold my-2 ">Transação recentes</h1>
@@ -385,6 +386,7 @@ const DashboardPage = () => {
             </div>
           </div>
         </section>
+        <Goal />
     </div>
   )
 };
