@@ -7,5 +7,6 @@ export { default as Paginatior} from './Paginatior'
 export { default as PaginationT} from './PaginationT'
 export { default as Modal} from './Modal'
 export { default as Goal} from './Goal'
+export { default as DonutChart} from './DonutChart'
 export { default as PaginationPrimary} from './PaginationPrimary'
 

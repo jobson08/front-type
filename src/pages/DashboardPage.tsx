@@ -16,6 +16,7 @@ import { RiAddLine, RiBarChart2Fill, RiDownload2Fill, RiExternalLinkFill} from "
 import { Menu, MenuButton, MenuItem } from "@szhsin/react-menu";
 import Goal from "components/Goal";
 import { Progress } from "@material-tailwind/react";
+import DonutChart from "components/DonutChart";
 
 const DashboardPage = () => {
 
@@ -185,7 +186,6 @@ const DashboardPage = () => {
                 className={`text-4xl text-white bg-green-500 p-2 box-content rounded-xl`}
               />
             </div>
-
             <div>
               {/*             <Menu
            menuButton={
@@ -239,109 +239,11 @@ const DashboardPage = () => {
           <div>   
             <div className="bg-white  p-4 rounded-xl shadow-2xl mb-4 flex flex-col gap-4">
               {/* Card 1 */}
-               <h1 className="text-2xl font-bold mb-4">Recent invoices</h1>
-               {/*avatra 1 */}
-              <div className="grid grid-cols-1 xl:grid-cols-4 items-center bg-slate-200  p-4 rounded-xl shadow-1xl gap-2 mb-2">
-                <div className="col-span-2 flex items-center gap-4">
-                  <img
-                   src={avatar3} alt="user3"
-                    className="w-14 h-14 object-cover rounded-xl"
-                  />
-                  <div>
-                    <h3 className="font-bold">Alexander Williams</h3>
-                    <p className="text-gray-500">JQ Holdings</p>
-                  </div>
-                </div>
-                <div>
-                  <span className="bg-green-100 text-green-800 py-1 px-3 rounded-full font-medium">
-                    Paid
-                  </span>
-                </div>
-                <div>
-                  <span className="font-bold">&euro; 1,200.87</span>
-                </div>
-              </div>
-              {/*avatra 2 */}
-              <div className="grid grid-cols-1 xl:grid-cols-4 items-center bg-slate-200  p-4 rounded-xl shadow-1xl gap-2 mb-2">
-                <div className="col-span-2 flex items-center gap-4">
-                  <img
-                    src={avatar4} alt="user4"
-                    className="w-14 h-14 object-cover rounded-xl"
-                  />
-                  <div>
-                    <h3 className="font-bold">Jhon Philips</h3>
-                    <p className="text-gray-500">Inchor Techs</p>
-                  </div>
-                </div>
-                <div>
-                  <span className="bg-red-100 text-red-800 py-1 px-3 rounded-full font-medium">
-                    Late
-                  </span>
-                </div>
-                <div>
-                  <span className="font-bold">&euro; 12,998.88</span>
-                </div>
-              </div>
-              {/*avatra 3 */}
-              <div className="grid grid-cols-1 xl:grid-cols-4 items-center bg-slate-200  p-4 rounded-xl shadow-1xl gap-2 mb-2">
-                <div className="col-span-2 flex items-center gap-4">
-                  <img
-                    src={avatar4} alt="user4"
-                    className="w-14 h-14 object-cover rounded-xl"
-                  />
-                  <div>
-                    <h3 className="font-bold">Jhon Philips</h3>
-                    <p className="text-gray-500">Inchor Techs</p>
-                  </div>
-                </div>
-                <div>
-                  <span className="bg-red-100 text-red-800 py-1 px-3 rounded-full font-medium">
-                    Late
-                  </span>
-                </div>
-                <div>
-                  <span className="font-bold">&euro; 12,998.88</span>
-                </div>
-              </div>
-              {/*avatra 2 */}
-              <div className="grid grid-cols-1 xl:grid-cols-4 items-center bg-slate-200  p-4 rounded-xl shadow-1xl gap-2 mb-2">
-                <div className="col-span-2 flex items-center gap-4">
-                  <img
-                    src={avatar4} alt="user4"
-                    className="w-14 h-14 object-cover rounded-xl"
-                  />
-                  <div>
-                    <h3 className="font-bold">Jhon Philips</h3>
-                    <p className="text-gray-500">Inchor Techs</p>
-                  </div>
-                </div>
-                <div>
-                  <span className="bg-red-100 text-red-800 py-1 px-3 rounded-full font-medium">
-                    Late
-                  </span>
-                </div>
-                <div>
-                  <span className="font-bold">&euro; 12,998.88</span>
-                </div>
-              </div>
+               <h1 className="text-2xl font-bold mb-4">Despesas por Categoria</h1>
+            <DonutChart/>
             </div>
-            {/* Card 3 
-            <div className="bg-indigo-900 text-gray-300 p-8 rounded-xl shadow-2xl flex items-center justify-between flex-wrap xl:flex-nowrap gap-8">
-              <div>
-                <RiHashtag className="text-4xl -rotate-12" />
-              </div>
-              <div>
-                <h5 className="font-bold text-white">Engage with clients</h5>
-                <h5>Join slack channel</h5>
-              </div>
-              <div className="w-full xl:w-auto">
-                <button className="bg-indigo-500 py-2 px-6 rounded-xl text-white w-full">
-                  Join now
-                </button>
-              </div>
-            </div>*/}
           </div>
-           {/* Card 4 */}
+           {/* Card 4 Transação recentes */}
           <div>
         <div className="bg-white p-4 rounded-xl shadow-2xl mb-4 flex flex-col gap-4">
             {/* Lista tranzaçôes recentes*/}
