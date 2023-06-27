@@ -22,7 +22,7 @@ const ForgetPassword = () => {
           <RiMailLine  className='absolute text-blue-500 top-1/2 -translate-y-1/2 left-2'/>
             <input
               type="email"
-              className="py-2 pl-8 pr-4 w-full  bg-whaite-400 outline-none rounded-lg"
+              className="py-2 pl-8 pr-4 w-full  bg-whaite-400 outline-none rounded-lg borde"
               placeholder="Email"
             />
           </div>

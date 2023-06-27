@@ -18,29 +18,29 @@ function Sidebar() {
           </h1>
           <ul>
             <li>
-              <Link to="/dashboard" className='flex items-center gap-2 py-2 px-4 rounded-lg text-slate-200 hover:bg-main-bg transition-colors'>
+              <Link to="/dashboard" className='flex items-center gap-2 py-2 px-4 rounded-lg text-white hover:bg-main-bg transition-colors'>
                 <BsFillGrid1X2Fill className='text-secondary' />Dashboard
               </Link>
             </li>
             <li>
-              <Link to="/relaEntrada" className='flex items-center gap-2 py-2 px-4 rounded-lg text-slate-200 hover:bg-main-bg transition-colors'>
+              <Link to="/relaEntrada" className='flex items-center gap-2 py-2 px-4 rounded-lg text-white hover:bg-main-bg transition-colors'>
                 <BsFillArrowUpCircleFill className='text-secondary' />Receita
               </Link>
             </li>
             <li>
-              <Link to="/relaDespesa" className='flex items-center gap-2 py-2 px-4 rounded-lg text-slate-200 hover:bg-main-bg transition-colors'>
+              <Link to="/relaDespesa" className='flex items-center gap-2 py-2 px-4 rounded-lg text-white hover:bg-main-bg transition-colors'>
                 <BsFillArrowDownCircleFill className='text-secondary' />Despesas
               </Link>
             </li>
             {/*  <li>
-            <Link to="/category" className='flex items-center gap-2 py-2 px-4 rounded-lg text-slate-200 hover:bg-main-bg transition-colors'>
+            <Link to="/category" className='flex items-center gap-2 py-2 px-4 rounded-lg text-white hover:bg-main-bg transition-colors'>
               <BsFillGridFill className='text-secondary' />Categorias
             </Link>
           </li>*/}
 
             <li>
               <button onClick={() => setShowSubmenuRegister(!ShowSubmenuRegister)} className='flex items-center justify-between py-2 px-4 rounded-lg 
-            text-slate-200 hover:bg-main-bg transition-colors'>
+            text-white hover:bg-main-bg transition-colors'>
                 <span className=' flex items-center gap-2'>
                   <BsPenFill className='text-secondary' />Cadastro
                 </span>
@@ -48,7 +48,7 @@ function Sidebar() {
               </button>
               <ul className={`my-2 ${!ShowSubmenuRegister && "hidden"}`}>
                 <li>
-                  <Link to="/category" className='py-2 px-4 border-l text-gray-100 rounded-lg border-green-300 ml-6 block relative before:w-3 
+                  <Link to="/category" className='py-2 px-4 border-l text-white rounded-lg border-green-300 ml-6 block relative before:w-3 
                   before:h-3 before:absolute before:bg-gree1-bg before:rounded-full before:-left-[6.5px] 
                   before:top-1/2 before:-translate-y-1/2 before:border-4 before:border-secondary hover:bg-main-bg
                   transition-colors'>
@@ -56,7 +56,7 @@ function Sidebar() {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/account" className='py-2 px-4 border-l text-gray-100 rounded-lg border-green-300 ml-6 block relative before:w-3 
+                  <Link to="/account" className='py-2 px-4 border-l text-white rounded-lg border-green-300 ml-6 block relative before:w-3 
                   before:h-3 before:absolute before:bg-gree1-bg before:rounded-full before:-left-[6.5px] 
                   before:top-1/2 before:-translate-y-1/2 before:border-4 before:border-secondary hover:bg-main-bg
                   transition-colors'>
@@ -76,7 +76,7 @@ function Sidebar() {
 
             <li>
               <button onClick={() => setShowSubmenuRelatorio(!ShowSubmenuRelatorio)} className='flex items-center justify-between py-2 px-4 rounded-lg 
-            text-slate-200 hover:bg-main-bg transition-colors'>
+            text-white hover:bg-main-bg transition-colors'>
                 <span className=' flex items-center gap-2'>
                   <BsPeaceFill className='text-secondary' />Relatorio
                 </span>
@@ -112,7 +112,7 @@ function Sidebar() {
 
             <li>
               <button onClick={() => setShowSubmenu(!showSubmenu)} className='flex items-center justify-between py-2 px-4 rounded-lg 
-            text-slate-200 hover:bg-main-bg transition-colors'>
+            text-white hover:bg-main-bg transition-colors'>
                 <span className=' flex items-center gap-2'>
                   <BsTools className='text-secondary' />Comfiguração
                 </span>
@@ -141,7 +141,7 @@ function Sidebar() {
           </ul>
         </div>
         <nav>
-          <Link to="/" className='flex items-center gap-2 py-2 px-4 rounded-lg text-slate-200 hover:bg-main-bg transition-colors'>
+          <Link to="/" className='flex items-center gap-2 py-2 px-4 rounded-lg text-white hover:bg-main-bg transition-colors'>
             <RiLogoutCircleRLine className='text-secondary w-6 h-6' />Sair
           </Link>
         </nav>
