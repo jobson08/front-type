@@ -18,8 +18,8 @@ import Goal from "components/Goal";
 import { Progress } from "@material-tailwind/react";
 import DonutChart from "components/DonutChart";
 
-const DashboardPage = () => {
 
+const DashboardPage = () => {
   const [list, setList] = useState(items);
   const [filteredList, setFilteredList] = useState<Item[]>([]);
   const [currentMonth, setCurrentMonth] = useState(getCurrentMonth());

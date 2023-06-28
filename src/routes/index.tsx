@@ -6,14 +6,13 @@ import EntryReportPage from 'pages/reports/IncomReportPage';
 import Error from 'pages/Error';
 import ProfilePage from 'pages/ProfilePage';
 import SettingsPage from 'pages/SettingsPage';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import CategoryPage from 'pages/reports/CategoryPage';
 import AccountPage from 'pages/reports/AccountPage';
 import TotalReportPage from 'pages/reports/TotalReportPage';
 
 function AppRoutes() {
       return (
-            <BrowserRouter>
                   <Routes>
                         <Route path="/" element={(<LoginPage />)} />
                         <Route path="/register" element={(<RegisterPage />)} />
@@ -32,7 +31,6 @@ function AppRoutes() {
                         {/*Error 404*/}
                         <Route path="*" element={<Error />} />
                   </Routes>
-            </BrowserRouter>
       )
 }
 

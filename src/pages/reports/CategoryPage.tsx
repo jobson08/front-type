@@ -11,7 +11,7 @@ const CategoryPage = () => {
   const categoryService = useCategoryService();
   
   const [showModal, setShowModal] = useState<boolean>(false)
-  const [categoryList, setCategorytyList] = useState<CategoryModel[]>();
+  //const [categoryList, setCategorytyList] = useState<CategoryModel[]>();
 
   useEffect(() => {
     categoryService.loadPageCategory().then((res) => {

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { AxiosResponse } from "axios";
-import { httpClient } from "data/server/http";
+import { httpClient } from "data/server/httpClient";
 import { CategoryModel } from "data/server/models";
 import { PaginationType } from "data/server/models/Pagination";
 
