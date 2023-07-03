@@ -28,7 +28,7 @@ const Tabs: FC<{ panels: Panel[] }> = ({ panels }) => {
       ))}
 
       {/*tab */}
-      <div className=" p-4 ">
+      <div className=" p-2 ">
         {ActiveContet && < ActiveContet />}
       </div>
       

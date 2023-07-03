@@ -14,7 +14,7 @@ function SettingsPage() {
       </div>
       {/* Form modal lançamento*/}
       <Modal show={showModal} setShow={setShowModal}>
-        <div className=' w-50 bg-gray-300 p-2 rounded-xl mb-5'>
+        <div className=' w-50 bg-gray-300 p-2 rounded-xl mb-2'>
        
         {/*}  <div className='items-center'>
             <h1 className='text-xl text-black '>Nova Despesas</h1>
