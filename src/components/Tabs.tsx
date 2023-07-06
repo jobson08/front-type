@@ -19,11 +19,11 @@ const Tabs: FC<{ panels: Panel[] }> = ({ panels }) => {
        <div
         onClick={() => setActiveTab(panel.name)}
           key={panel.name}
-          className={classNames("text-center hover:bg-gray-400  bg-white cursor-pointer px-2 py-2 border rounded-t-lg  shadow-lg border-t-gray-400 border-l-gray-400 border-b-0 mr-2",
-         panel.name === activeTab && "bg-gray-400 font-bold text-white")}
+          className={classNames("text-center hover:bg-gray-400  bg-white py-2 px-4 m-1 cursor-pointer rounded-lg ",
+         panel.name === activeTab && "bg-gray-400 font-bold text-white shadow-md ")}
         >
           {panel.name}
-        </div>
+      </div>
         
       ))}
 </div>
@@ -36,3 +36,4 @@ const Tabs: FC<{ panels: Panel[] }> = ({ panels }) => {
 }
 
 export default Tabs
+{/* py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 */}

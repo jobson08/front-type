@@ -1,7 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState, useEffect } from "react";
-import avatar3 from '../data/image/avatar3.png'
-import avatar4 from '../data/image/avatar4.jpg'
 import "@szhsin/react-menu/dist/index.css";
 import "@szhsin/react-menu/dist/transitions/slide.css";
 import { convertAmericanFromBrazil } from '../helpers/dateFilter'
@@ -13,9 +11,7 @@ import InfoArea from "components/InfoArea";
 import { categories } from "data/test/categories";
 import { Link } from "react-router-dom";
 import { RiAddLine, RiBarChart2Fill, RiDownload2Fill, RiExternalLinkFill } from "react-icons/ri";
-import { Menu, MenuButton, MenuItem } from "@szhsin/react-menu";
 import Goal from "components/Goal";
-import { Progress } from "@material-tailwind/react";
 import DonutChart from "components/DonutChart";
 import Modal from "components/Modal";
 import Tabs from "components/Tabs";
@@ -168,7 +164,7 @@ const DashboardPage = () => {
           </div>
           {/* Number of tickets */}
           <div>
-            <h1 className='text-4xl font-bold mb-4 '>R$: {convertAmericanFromBrazil(expense)}</h1>
+            <h1 className='text-4xl font-bold mb-4 '>R$: -{convertAmericanFromBrazil(expense)}</h1>
             <p className="text-2xl text-red-500 font-bold">Total Despesas</p>
           </div>
           <hr className="border border-dashed border-gray-500/50 my-4" />
@@ -252,22 +248,17 @@ const DashboardPage = () => {
           <div className="bg-white p-2 rounded-xl shadow-2xl mb-2 flex flex-col gap-4">
             {/* Lista tranzaçôes recentes*/}
             <div className="flex flex-col">
-              <h1 className="text-2xl text-blue font-bold my-2 ">Transação recentes</h1>
+              <h1 className="text-2xl text-blue font-bold my-4 ">Transação recentes</h1>
               {/* Button*/}
               <div className='flex justify-end'>
                 <button onClick={() => setShowModal(true)}
                   className=' bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-cyan-500 transition-colors'>
-                  Nova Despesa
+                  Nova Transação
                 </button>
               </div>
               {/* Form modal lançamento*/}
               <Modal show={showModal} setShow={setShowModal}>
                 <div className=' w-50 bg-gray-300 p-2 rounded-xl mb-2'>
-
-                  {/*}  <div className='items-center'>
-            <h1 className='text-xl text-black '>Nova Despesas</h1>
-        </div>  */}
-
                   <Tabs panels={[
                     {
                       name: "Receita",
@@ -405,7 +396,7 @@ const DashboardPage = () => {
                                       </p>
                                     </div>
                                     <div className='flex-1'>
-                                      <input type="text" className='w-full py-2 px-2 outline-none rounded-lg bg-slate-100'
+                                      <input type="text" className='w-full py-2 px-4 outline-none rounded-lg bg-slate-100'
                                         placeholder='Descrição' />
                                     </div>
                                   </div>
@@ -430,7 +421,7 @@ const DashboardPage = () => {
                                       <span className='text-red-500'>*</span>
                                     </p>
                                   </div>
-                                  <div className='flex-1 flex items-center gap-4'>
+                                  <div className='flex-1 flex items-center gap-2'>
                                     <select name="conta" id="conta" className='w-full py-2  px-4 outline-none rounded-lg bg-slate-100'>
                                       <option value="Fabrica">Carteira</option>
                                       <option value="Padaria">Popança</option>
@@ -444,7 +435,7 @@ const DashboardPage = () => {
                               <button onClick={() => setShowModal(false)}
                                 className='bg-red-600 text-white font-bold py-2 px-4 ml-2 rounded-lg hover:bg-red-400 transition-colors'>
                                 Cancelar
-                              
+
                               </button>
                               <button className='bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-cyan-500 transition-colors'>
                                 Salvar
