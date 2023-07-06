@@ -6,9 +6,10 @@ function SettingsPage() {
   const [showModal, setShowModal] = useState<boolean>(false)
   return (
     <div>
+      {/* Button*/}
       <div className='flex justify-end'>
         <button onClick={() => setShowModal(true)}
-          className='bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-cyan-500 transition-colors'>
+          className=' bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-cyan-500 transition-colors'>
           Nova Despesa
         </button>
       </div>
@@ -25,7 +26,7 @@ function SettingsPage() {
           <Tabs panels={[
             {
               name: "Receita",
-              content: () => {
+              content: (() => {
                 return <div>
             {/*Tab Entrada de Receitas*/}
             <h1 className=" text-blue-500 font-extrabold ">Receitas</h1>
@@ -101,14 +102,14 @@ function SettingsPage() {
                     </form>
                   </div>
                 </div>
-              }
+              })()
             },
 
 
             {
               
               name: "Despesas",
-              content: () => {
+              content: (() => {
                 return <div>
                 {/*Tab Entrada de Despesas */}
                 <h1 className=" text-red-500 font-extrabold ">Despesas</h1>
@@ -185,7 +186,7 @@ function SettingsPage() {
                   </div>
 
                 </div>
-              }
+              })()
             },
           ]} />
           
