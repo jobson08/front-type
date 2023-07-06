@@ -31,7 +31,7 @@ function SettingsPage() {
             {/*Tab Entrada de Receitas*/}
             <h1 className=" text-blue-500 font-extrabold ">Receitas</h1>
                   <div>
-                    <form>
+                    <form className='mt-2'>
                       <div className=' gap-y-2 md:flex-row md:items-center mb-4'>
                         <div className='w-full md:w-1/4'>
                           <p className="text-blue-500">
@@ -114,7 +114,7 @@ function SettingsPage() {
                 {/*Tab Entrada de Despesas */}
                 <h1 className=" text-red-500 font-extrabold ">Despesas</h1>
                   <div>
-                    <form>
+                    <form className='mt-2'>
                       <div className=' gap-y-2 md:flex-row md:items-center mb-4'>
                         <div className='w-full md:w-1/4'>
                           <p className="text-red-500">

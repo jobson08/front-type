@@ -12,12 +12,13 @@ import ItemsListe from "components/ItemsListe";
 import InfoArea from "components/InfoArea";
 import { categories } from "data/test/categories";
 import { Link } from "react-router-dom";
-import { RiAddLine, RiBarChart2Fill, RiDownload2Fill, RiExternalLinkFill} from "react-icons/ri";
+import { RiAddLine, RiBarChart2Fill, RiDownload2Fill, RiExternalLinkFill } from "react-icons/ri";
 import { Menu, MenuButton, MenuItem } from "@szhsin/react-menu";
 import Goal from "components/Goal";
 import { Progress } from "@material-tailwind/react";
 import DonutChart from "components/DonutChart";
-
+import Modal from "components/Modal";
+import Tabs from "components/Tabs";
 
 const DashboardPage = () => {
   const [list, setList] = useState(items);
@@ -25,6 +26,7 @@ const DashboardPage = () => {
   const [currentMonth, setCurrentMonth] = useState(getCurrentMonth());
   const [income, setIncome] = useState(0);
   const [expense, setExpense] = useState(0);
+  const [showModal, setShowModal] = useState<boolean>(false)
 
   //monitora a mudança da lista e o mes atual
   useEffect(() => {
@@ -73,8 +75,9 @@ const DashboardPage = () => {
                 className={`text-4xl text-white bg-blue-500 p-2 box-content rounded-xl`}
               />
             </div>
-     <div>
-          {/*
+            {/*Button modelo 1 */}
+            <div>
+              {/*
             <Menu
                 menuButton={
                   <MenuButton className="flex items-center gap-x-2 hover:bg-gray-100 rounded-lg transition-colors">
@@ -131,7 +134,7 @@ const DashboardPage = () => {
             </div>
 
             <div>
-        {/*          
+              {/*          
           <Menu
            menuButton={
              <MenuButton className="flex items-center gap-x-2 hover:bg-gray-100 rounded-lg transition-colors">
@@ -234,22 +237,231 @@ const DashboardPage = () => {
           </div>
         </div>
       </div>
-         {/*section 1 */}
+      {/*section 1 */}
       <section className="grid grid-cols-1 md:grid-cols-2 mt-5 gap-4">
-          <div>   
-            <div className="bg-white  p-4 rounded-xl shadow-2xl mb-4 flex flex-col gap-4">
-              {/* Card 1 */}
-               <h1 className="text-2xl font-bold mb-4">Despesas por Categoria</h1>
-            <DonutChart/>
-            </div>
+        <div>
+          <div className="bg-white  p-4 rounded-xl shadow-2xl mb-4 flex flex-col gap-4">
+            {/* Card 1 */}
+            <h1 className="text-2xl font-bold mb-4">Despesas por Categoria</h1>
+            <DonutChart />
           </div>
-           {/* Card 4 Transação recentes */}
-          <div>
-        <div className="bg-white p-4 rounded-xl shadow-2xl mb-4 flex flex-col gap-4">
+        </div>
+
+        {/* Card 4 Transação recentes */}
+        <div>
+          <div className="bg-white p-2 rounded-xl shadow-2xl mb-2 flex flex-col gap-4">
             {/* Lista tranzaçôes recentes*/}
             <div className="flex flex-col">
               <h1 className="text-2xl text-blue font-bold my-2 ">Transação recentes</h1>
-              <div className="flex justify-end">
+              {/* Button*/}
+              <div className='flex justify-end'>
+                <button onClick={() => setShowModal(true)}
+                  className=' bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-cyan-500 transition-colors'>
+                  Nova Despesa
+                </button>
+              </div>
+              {/* Form modal lançamento*/}
+              <Modal show={showModal} setShow={setShowModal}>
+                <div className=' w-50 bg-gray-300 p-2 rounded-xl mb-2'>
+
+                  {/*}  <div className='items-center'>
+            <h1 className='text-xl text-black '>Nova Despesas</h1>
+        </div>  */}
+
+                  <Tabs panels={[
+                    {
+                      name: "Receita",
+                      content: (() => {
+                        return <div>
+                          {/*Tab Entrada de Receitas*/}
+                          <h1 className=" text-blue-500 font-extrabold ">Receitas</h1>
+                          <hr className='my-2 border-blue-600' />
+                          <div>
+                            <form className='mt-2'>
+                              <div className=' gap-y-2 md:flex-row md:items-center mb-4'>
+                                <div className='w-full md:w-1/4'>
+                                  <p className="text-blue-500">
+                                    Valor
+                                    <span className='text-red-500'>*</span>
+                                  </p>
+                                </div>
+                                <div className='flex-1 flex items-center gap-4'>
+                                  <div className='w-full'>
+                                    <input type="number" className='w-full py-2 px-4 outline-none rounded-lg bg-slate-100'
+                                      placeholder='R$:' />
+                                  </div>
+                                </div>
+
+                                <div className=' md:flex-row md:items-center gap-y-2 mb-4'>
+                                  <div className='w-full md:w-1/4'>
+                                    <p className="text-blue-500">
+                                      Data
+                                      <span className='text-red-500'>*</span>
+                                    </p>
+                                  </div>
+                                  <div className='flex-1'>
+                                    <input type="date" className='w-full py-2 px-4 outline-none rounded-lg bg-slate-100'
+                                      placeholder='Data' />
+                                  </div>
+
+                                  <div className=' md:flex-row md:items-center gap-y-2 mb-2'>
+                                    <div className='w-full md:w-1/4'>
+                                      <p className="text-blue-500">
+                                        Descrição
+                                        <span className='text-red-500'>*</span>
+                                      </p>
+                                    </div>
+                                    <div className='flex-1'>
+                                      <input type="text" className='w-full py-2 px-4 outline-none rounded-lg bg-slate-100'
+                                        placeholder='Descrição' />
+                                    </div>
+                                  </div>
+
+                                  <div className='w-full md:w-1/4'>
+                                    <p className="text-blue-500">
+                                      Categoria
+                                      <span className='text-red-500'>*</span>
+                                    </p>
+                                  </div>
+                                  <div className='flex-1 flex items-center gap-2'>
+                                    <select name="category" id="category" className='w-full py-2  px-4 outline-none rounded-lg bg-slate-100'>
+                                      <option value="Fabrica">Fabrica</option>
+                                      <option value="Padaria">Padaria</option>
+                                      <option value="Despesas">Despesas</option>
+                                    </select>
+                                  </div>
+
+                                  <div className='w-full md:w-1/4'>
+                                    <p className="text-blue-500">
+                                      Conta
+                                      <span className='text-red-500'>*</span>
+                                    </p>
+                                  </div>
+                                  <div className='flex-1 flex items-center gap-2'>
+                                    <select name="conta" id="conta" className='w-full py-2  px-4 outline-none rounded-lg bg-slate-100'>
+                                      <option value="Fabrica">Carteira</option>
+                                      <option value="Padaria">Popança</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                            </form>
+                            <hr className='my-4 border-blue-600' />
+                            <div className='flex justify-center space-x-2 pt-2'>
+                              <button onClick={() => setShowModal(false)}
+                                className='bg-red-600 text-white font-bold py-2 px-4 ml-2 rounded-lg hover:bg-red-400 transition-colors'>
+                                Cancelar
+                              </button>
+
+                              <button className='bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-cyan-500 transition-colors'>
+                                Salvar
+                              </button>
+
+                            </div>
+                          </div>
+                        </div>
+                      })()
+                    },
+                    {
+                      name: "Despesas",
+                      content: (() => {
+                        return <div>
+                          {/*Tab Entrada de Despesas */}
+                          <h1 className=" text-red-500 font-extrabold ">Despesas</h1>
+                          <hr className='my-2 border-red-600' />
+                          <div>
+                            <form className='mt-2'>
+                              <div className=' gap-y-2 md:flex-row md:items-center mb-4'>
+                                <div className='w-full md:w-1/4'>
+                                  <p className="text-red-500">
+                                    Valor
+                                    <span className='text-red-500'>*</span>
+                                  </p>
+                                </div>
+                                <div className='flex-1 flex items-center gap-4'>
+                                  <div className='w-full'>
+                                    <input type="number" className='w-full py-2 px-4 outline-none rounded-lg bg-slate-100'
+                                      placeholder='R$:' />
+                                  </div>
+                                </div>
+
+                                <div className=' md:flex-row md:items-center gap-y-2 mb-4'>
+                                  <div className='w-full md:w-1/4'>
+                                    <p className="text-red-500">
+                                      Data
+                                      <span className='text-red-500'>*</span>
+                                    </p>
+                                  </div>
+                                  <div className='flex-1'>
+                                    <input type="date" className='w-full py-2 px-4 outline-none rounded-lg bg-slate-100'
+                                      placeholder='Data' />
+                                  </div>
+
+                                  <div className=' md:flex-row md:items-center gap-y-2 mb-2'>
+                                    <div className='w-full md:w-1/4'>
+                                      <p className="text-red-500">
+                                        Descrição
+                                        <span className='text-red-500'>*</span>
+                                      </p>
+                                    </div>
+                                    <div className='flex-1'>
+                                      <input type="text" className='w-full py-2 px-2 outline-none rounded-lg bg-slate-100'
+                                        placeholder='Descrição' />
+                                    </div>
+                                  </div>
+
+                                  <div className='w-full md:w-1/4'>
+                                    <p className="text-red-500">
+                                      Categoria
+                                      <span className='text-red-500'>*</span>
+                                    </p>
+                                  </div>
+                                  <div className='flex-1 flex items-center gap-2'>
+                                    <select name="category" id="category" className='w-full py-2  px-4 outline-none rounded-lg bg-slate-100'>
+                                      <option value="Fabrica">Fabrica</option>
+                                      <option value="Padaria">Padaria</option>
+                                      <option value="Despesas">Despesas</option>
+                                    </select>
+                                  </div>
+
+                                  <div className='w-full md:w-1/4'>
+                                    <p className="text-red-500">
+                                      Conta
+                                      <span className='text-red-500'>*</span>
+                                    </p>
+                                  </div>
+                                  <div className='flex-1 flex items-center gap-4'>
+                                    <select name="conta" id="conta" className='w-full py-2  px-4 outline-none rounded-lg bg-slate-100'>
+                                      <option value="Fabrica">Carteira</option>
+                                      <option value="Padaria">Popança</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                            </form>
+                            <hr className='my-4 border-red-600' />
+                            <div className='flex justify-center space-x-2 pt-2'>
+                              <button onClick={() => setShowModal(false)}
+                                className='bg-red-600 text-white font-bold py-2 px-4 ml-2 rounded-lg hover:bg-red-400 transition-colors'>
+                                Cancelar
+                              
+                              </button>
+                              <button className='bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-cyan-500 transition-colors'>
+                                Salvar
+                              </button>
+
+                            </div>
+                          </div>
+
+                        </div>
+                      })()
+                    },
+                  ]} />
+                </div>
+              </Modal>
+              {/*add modelo 2 */}
+              <div>
+                {/*}  <div className="flex justify-end">
                 <Menu
                   menuButton={
                     <MenuButton className="flex items-center gap-x-2 bg-primary text-red-50 font-bold p-2 rounded-lg transition-colors">
@@ -281,14 +493,15 @@ const DashboardPage = () => {
                     </Link>
                   </MenuItem>
                 </Menu>
+                </div>*/}
               </div>
               <hr className="border border-dashed border-gray-500/50 mt-5 " />
             </div>
             < ItemsListe list={filteredList} />
-            </div>
           </div>
-        </section>
-        <Goal />
+        </div>
+      </section>
+      <Goal />
     </div>
   )
 };
