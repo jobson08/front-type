@@ -41,7 +41,7 @@ const DashboardPage = () => {
       if (categories[filteredList[i].category].expense) {
         expenseCount += filteredList[i].value; // se categoria for despesa  soma com o valor
       } else {
-        incomeCount += filteredList[i].value; //se não categoria for reseita soma com o valor
+        incomeCount += filteredList[i].value; //se não categoria for reseita soma com o valores
       }
     }
 
