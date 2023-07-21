@@ -34,7 +34,7 @@ const DashboardPage = () => {
   }
 
   useEffect(() => {
-    let incomeCount = 0; // quando o filterLista for modificao zera receita e despesa
+    let incomeCount = 0; // quando o filterLista for modificao zera receita e despesasS
     let expenseCount = 0;
 
     for (let i in filteredList) {
